@@ -1,7 +1,7 @@
 <template>
-  <div id="header">
+  <div id="header" :class="isOpaque && 'headerOpaque'">
     <div id="logo">
-      <img src="../assets/bitsLogo.svg" alt="BITS Pilani Logo" />
+      <img src="../../assets/bitsLogo.svg" alt="BITS Pilani Logo" />
     </div>
     <div id="nav">
       <div class="navElement"><router-link to="/">Home</router-link></div>
@@ -36,10 +36,17 @@ export default {
   components: {
     OrangeButton,
   },
+  props: {
+    isOpaque: Boolean,
+  },
 };
 </script>
 
 <style scoped>
+.headerOpaque {
+  background-color: #050505;
+}
+
 #header {
   display: flex;
   flex-direction: row;
@@ -47,7 +54,7 @@ export default {
   align-items: center;
   padding: 15px 3.3333vw;
   user-select: none;
-  font-weight: 600;
+  font-weight: 400;
   font-family: "Maven Pro", sans-serif;
   width: 100vw;
   color: white;
@@ -60,7 +67,7 @@ export default {
 #nav {
   display: flex;
   flex-direction: row;
-  font-size: 18px;
+  font-size: 24px;
   position: relative;
 }
 
@@ -70,7 +77,7 @@ export default {
   align-items: center;
   margin: 0 20px;
   cursor: pointer;
-  border-bottom: 0px solid grey;
+  border-bottom: 0px solid #f1f1f1;
   transition: all 0.13s ease;
   padding-bottom: 1px;
   color: white;
@@ -78,7 +85,7 @@ export default {
 
 .navElement:hover {
   padding-bottom: 0px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 .navElement a {
@@ -97,6 +104,7 @@ export default {
   opacity: 0;
   transition: opacity 0.2s ease-in;
   margin-top: 100px;
+  color: #211912;
 }
 
 .dropdown {

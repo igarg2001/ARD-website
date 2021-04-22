@@ -1,5 +1,6 @@
 <template>
   <div id="fullPage">
+    <div id="overlay"></div>
     <vueper-slides
       fixed-height="100vh"
       ref="myVueperSlides"
@@ -11,6 +12,7 @@
       @autoplay-resume="internalAutoPlaying = true"
       :parallax= 1
       :parallax-fixed-content= false
+      :arrows="false"
     >
       <vueper-slide
         v-for="(slide, i) in slides"
@@ -80,19 +82,25 @@ export default {
 #fullPage {
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: absolute;
+  top:0;
+  left:0;
 }
 
 #overlay {
   width: 100%;
   height: 100%;
   background-color: #08070a;
-  opacity: 0.5;
+  opacity: 0.75;
   z-index: 500;
   position: absolute;
 }
 
 .vueperslides--fixed-height {
   height: 100vh;
+}
+
+.vueperslides__bullets{
+  z-index: 501;
 }
 </style>
