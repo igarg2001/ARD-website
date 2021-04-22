@@ -4,8 +4,10 @@
       <img src="../assets/bitsLogo.svg" alt="BITS Pilani Logo" />
     </div>
     <div id="nav">
-      <div class="navElement">Home</div>
-      <div class="navElement">Distinguished Alumni</div>
+      <div class="navElement"><router-link to="/">Home</router-link></div>
+      <div class="navElement">
+        <router-link to="/daa">Distinguished Alumni</router-link>
+      </div>
       <div class="navElement">Reunions</div>
       <div class="navElement">Events</div>
       <div class="navElement">Newsletters</div>
@@ -18,7 +20,11 @@
           <div class="dropdownElement">Link 3</div>
         </div>
       </div>
-      <OrangeButton displayText="Giving Back" type="outline" style="margin-left: 40px" />
+      <OrangeButton
+        displayText="Giving Back"
+        type="outline"
+        style="margin-left: 40px"
+      />
     </div>
   </div>
 </template>
@@ -42,7 +48,7 @@ export default {
   padding: 15px 3.3333vw;
   user-select: none;
   font-weight: 600;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   width: 100vw;
   color: white;
 }
@@ -67,11 +73,17 @@ export default {
   border-bottom: 0px solid grey;
   transition: all 0.13s ease;
   padding-bottom: 1px;
+  color: white;
 }
 
 .navElement:hover {
   padding-bottom: 0px;
   border-bottom: 1px solid grey;
+}
+
+.navElement a {
+  color: white;
+  text-decoration: none;
 }
 
 .dropdownContent {
