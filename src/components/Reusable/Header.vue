@@ -93,6 +93,10 @@ export default {
   text-decoration: none;
 }
 
+.navElement a.router-link-exact-active {
+  font-weight: 800;
+}
+
 .dropdownContent {
   display: flex;
   flex-direction: column;
