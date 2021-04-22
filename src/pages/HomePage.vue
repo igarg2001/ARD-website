@@ -29,7 +29,9 @@
   <PageSection>
     <template #heading>Announcements</template>
     <template #content>
-      Announcements
+      <div style="width: 65vw">
+        <NewsSlider />
+      </div>
     </template>
   </PageSection>
 </template>
@@ -40,6 +42,7 @@ import HeroSlider from "../components/HeroSlider";
 import OrangeButton from "../components/Reusable/Buttons/OrangeButton";
 import PageSection from "../components/Reusable/PageSection";
 import NumberCapsule from "../components/Reusable/NumberCapsule";
+import NewsSlider from "../components/NewsSlider";
 
 export default {
   name: "HomePage",
@@ -49,6 +52,7 @@ export default {
     OrangeButton,
     PageSection,
     NumberCapsule,
+    NewsSlider,
   },
 };
 </script>
@@ -118,7 +122,7 @@ export default {
   margin-right: 60px;
 }
 
-.imapctNumberCapsulesContainer{
+.imapctNumberCapsulesContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
