@@ -31,11 +31,11 @@ export default {
 
 .filled {
   background-color: #ff9233;
-  border: 1px solid #ff9233;
+  border: 3px solid #ff9233;
 }
 
 .outline {
-  border: 1px solid #ff9233;
+  border: 3px solid #ff9233;
   transition: all 0.2s ease;
 }
 
