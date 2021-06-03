@@ -1,5 +1,6 @@
-# ard-website
 
+# ard-website
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8f070077-097c-4d85-90e4-72fe8a0e0fea/deploy-status)](https://app.netlify.com/sites/ishangarg/deploys)
 ## Folder structure
 
 ### assets
