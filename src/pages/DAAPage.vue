@@ -57,7 +57,7 @@ import OrangeButton from "../components/Reusable/Buttons/OrangeButton";
 import PageSection from "../components/Reusable/PageSection";
 import ImageGrid from '../components/Reusable/ImageGrid';
 export default {
-  name: "HomePage",
+  name: "DAAPage",
   components: {
     Header,
     HeroSlider,
