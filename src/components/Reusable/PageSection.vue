@@ -33,10 +33,10 @@ export default {
 }
 
 .pageSectionHeadingContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .pageSectionHeadingText {
@@ -49,10 +49,10 @@ export default {
 }
 
 .headingUnderline {
-    width: 100%;
-    max-width: 15vw;
-    height: 10px;
-    background-color: #ff9233;
-    margin-bottom: 80px;
+  width: 100%;
+  max-width: 15vw;
+  height: 10px;
+  background-color: #ff9233;
+  margin-bottom: 80px;
 }
 </style>
