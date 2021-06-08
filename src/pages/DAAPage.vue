@@ -25,8 +25,8 @@
     event was well received by various prominent personalities including the
     list of Awardees.
   </div>
-    </template>
- </PageSection>
+</template>
+</PageSection>
  <div id="buttonCont">
     <OrangeButton displayText="2020" type="filled" />
       <OrangeButton displayText="2019" type="outline" color/>
@@ -35,7 +35,19 @@
          <OrangeButton displayText="2016" type="outline" color/>
  </div>
  <div id="awardeesCarouselContainer">
-     <div id="headingText">LIST OF AWARDEES</div>
+     <div class="headingText">LIST OF AWARDEES</div>
+ </div>
+ <div id="galleryContainer">
+   <div class="headingCont">
+       <div class="headingText whiteHeading">GALLERY</div>
+   <div class="headingUnderline"></div>
+   
+   </div>
+  <ImageGrid />
+  <div id="loadMoreButton">
+    <OrangeButton displayText="Load More" type="filled" />
+  </div>
+   
  </div>
 </template>
 <script>
@@ -43,6 +55,7 @@ import Header from "../components/Reusable/Header";
 import HeroSlider from "../components/HeroSlider";
 import OrangeButton from "../components/Reusable/Buttons/OrangeButton";
 import PageSection from "../components/Reusable/PageSection";
+import ImageGrid from '../components/Reusable/ImageGrid';
 export default {
   name: "HomePage",
   components: {
@@ -50,6 +63,7 @@ export default {
     HeroSlider,
     OrangeButton,
     PageSection,
+    ImageGrid
   },
 };
 </script>
@@ -141,13 +155,16 @@ export default {
     align-items: center;
     padding: 15px 0
 }
-#headingText {
+.headingText {
   font-family: "Maven Pro", sans-serif;
   font-weight: 800;
   color: #353535;
   text-transform: uppercase;
   font-size: 2.32vw;
   padding-bottom: 20px;
+}
+.whiteHeading {
+  color: white;
 }
 #awardeesCarouselContainer {
     width: 95%;
@@ -157,5 +174,22 @@ export default {
     align-items: center;
     margin-left: 2.5%;
     margin-top: 4%
+}
+#galleryContainer {
+  width: 100%;
+  background-color: #1b1b1b;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.headingUnderline {
+  width: 100%;
+    max-width: 15vw;
+    height: 10px;
+    background-color: #ff9233;
+    margin-bottom: 80px;
 }
 </style>
