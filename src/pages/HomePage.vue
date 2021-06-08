@@ -27,10 +27,18 @@
     </template>
   </PageSection>
   <PageSection>
-    <template #heading>Announcements</template>
+    <template #heading>Thank you Donors</template>
     <template #content>
-      <div style="width: 65vw">
+      <div class="newsSliderContainer">
         <NewsSlider />
+      </div>
+    </template>
+  </PageSection>
+  <PageSection>
+    <template #heading>BITSians in News</template>
+    <template #content>
+      <div class="achieversSliderContainer">
+        <AchieversSlider />
       </div>
     </template>
   </PageSection>
@@ -43,6 +51,7 @@ import OrangeButton from "../components/Reusable/Buttons/OrangeButton";
 import PageSection from "../components/Reusable/PageSection";
 import NumberCapsule from "../components/Reusable/NumberCapsule";
 import NewsSlider from "../components/NewsSlider";
+import AchieversSlider from "../components/AchieversSlider";
 
 export default {
   name: "HomePage",
@@ -53,6 +62,7 @@ export default {
     PageSection,
     NumberCapsule,
     NewsSlider,
+    AchieversSlider,
   },
 };
 </script>
@@ -86,12 +96,12 @@ export default {
 }
 
 .orange {
-  color: #ff9233;
+  color: var(--orange);
 }
 
 #heroImpactText {
   font-family: "Maven Pro", sans-serif;
-  font-size: 4vw;
+  font-size: 3.2vw;
   color: white;
   font-weight: 900;
   white-space: nowrap;
@@ -100,7 +110,7 @@ export default {
 }
 
 #heroSubText {
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: 1px;
   margin-bottom: 40px;
   color: white;
@@ -115,7 +125,7 @@ export default {
 
 #heroCTAButtons > div {
   padding: 15px 40px;
-  font-size: 24px;
+  font-size: 19px;
 }
 
 #heroCTAButtons div:first-child {
@@ -134,5 +144,27 @@ export default {
 
 .imapctNumberCapsulesContainer > div:last-child {
   margin-right: 0px;
+}
+
+.newsSliderContainer {
+  width: 85vw;
+  border: 2px solid var(--orange);
+  box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.1);
+}
+
+.achieversSliderContainer {
+  width: 95vw;
+  /* border: 2px solid var(--orange); */
+  /* box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.1); */
+}
+
+/deep/ .achieversSliderContainer .vueperslides__arrow {
+  /* border-radius: 50%; */
+  /* transform: scaleX(2); */
+  background-color: #21244f;
+  color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
 </style>
