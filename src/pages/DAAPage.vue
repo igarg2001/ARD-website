@@ -94,12 +94,12 @@ export default {
 }
 
 .orange {
-  color: #ff9233;
+  color: var(--orange);
 }
 
 #heroImpactText {
   font-family: "Maven Pro", sans-serif;
-  font-size: 4vw;
+  font-size: 3.2vw;
   color: white;
   font-weight: 900;
   white-space: nowrap;
@@ -108,7 +108,7 @@ export default {
 }
 
 #heroSubText {
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: 1px;
   margin-bottom: 40px;
   color: white;
@@ -123,7 +123,7 @@ export default {
 
 #heroCTAButtons > div {
   padding: 15px 40px;
-  font-size: 24px;
+  font-size: 19px;
 }
 
 #heroCTAButtons div:first-child {
@@ -137,7 +137,7 @@ export default {
 
   text-shadow: 0px 4px 60px #ffffff;
   font-family: "Baloo 2", sans-serif;
-  font-size: 26px;
+  font-size: 21px;
   text-align: center;
 }
 #buttonCont {
@@ -160,7 +160,7 @@ export default {
   font-weight: 800;
   color: #353535;
   text-transform: uppercase;
-  font-size: 2.9vw;
+  font-size: 2.32vw;
   padding-bottom: 20px;
 }
 .whiteHeading {

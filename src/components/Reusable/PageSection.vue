@@ -44,15 +44,15 @@ export default {
   font-weight: 800;
   color: #353535;
   text-transform: uppercase;
-  font-size: 2.9vw;
+  font-size: 2.32vw;
   padding-bottom: 20px;
 }
 
 .headingUnderline {
-  width: 100%;
-  max-width: 15vw;
-  height: 10px;
-  background-color: #ff9233;
-  margin-bottom: 80px;
+    width: 100%;
+    max-width: 15vw;
+    height: 10px;
+    background-color: var(--orange);
+    margin-bottom: 80px;
 }
 </style>

@@ -13,9 +13,6 @@
 
 <script>
 export default {
-  created() {
-    console.log(this.color);
-  },
   name: "OrangeButton",
   props: {
     displayText: String,
@@ -35,20 +32,20 @@ export default {
 }
 
 .filled {
-  background-color: #ff9233;
-  border: 3px solid #ff9233;
+  background-color: var(--orange);
+  border: 3px solid var(--orange);
 }
 
 .outline {
-  border: 3px solid #ff9233;
+  border: 3px solid var(--orange);
   transition: all 0.2s ease;
 }
 
 .outline:hover {
-  background-color: #ff9233;
+  background-color: var(--orange);
 }
 .color {
-  color: #ff9233;
+  color: var(--orange);
 }
 .color:hover {
   color: white;

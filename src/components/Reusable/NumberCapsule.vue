@@ -25,7 +25,7 @@ export default {
 }
 
 .outline {
-  border: 3px solid #ff9233;
+  border: 3px solid var(--orange);
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
@@ -37,15 +37,15 @@ export default {
 
 .number {
   font-family: "Maven Pro", sans-serif;
-  font-size: 2.4vw;
+  font-size: 1.92vw;
   font-weight: 700;
-  color: #ff9233;
+  color: var(--orange);
   text-align: center;
   margin-bottom: 5px;
 }
 
 .text {
-  font-size: 1.1vw;
+  font-size: 0.88vw;
   font-weight: 700;
   color: #21244f;
 }

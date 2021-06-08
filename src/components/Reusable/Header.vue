@@ -68,7 +68,7 @@ export default {
 #nav {
   display: flex;
   flex-direction: row;
-  font-size: 24px;
+  font-size: 19px;
   position: relative;
 }
 
