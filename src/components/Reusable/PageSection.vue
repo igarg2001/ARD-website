@@ -28,8 +28,8 @@ export default {
   margin-bottom: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
 }
 
 .pageSectionHeadingContainer {

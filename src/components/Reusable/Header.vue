@@ -6,16 +6,19 @@
     <div id="nav">
       <div class="navElement"><router-link to="/">Home</router-link></div>
       <div class="navElement">
+        <router-link to="/team">Alumni relations cell</router-link>
+      </div>
+      <div class="navElement">
         <router-link to="/daa">Distinguished Alumni</router-link>
       </div>
-      <div class="navElement">Reunions</div>
-      <div class="navElement">Events</div>
-      <div class="navElement"><router-link to="/newsletters">Newsletters</router-link></div>
+      <div class="navElement">Events &#38; Reunions</div>
       <div class="navElement">Contact Us</div>
       <div class="dropdown navElement">
         <div class="dropdownHeading navElement">More ▼</div>
         <div class="dropdownContent">
-          <div class="dropdownElement">Link 1</div>
+          <div class="dropdownElement">
+            <router-link to="/newsletters">Newsletters</router-link>
+          </div>
           <div class="dropdownElement">Link 2</div>
           <div class="dropdownElement">Link 3</div>
         </div>
@@ -109,6 +112,7 @@ export default {
   transition: opacity 0.2s ease-in;
   margin-top: 100px;
   color: #211912;
+  white-space: nowrap;
 }
 
 .dropdown {
