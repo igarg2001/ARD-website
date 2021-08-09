@@ -1,18 +1,18 @@
 <template>
-  <vueper-slides class="no-shadow" fade :touchable="false">
+  <vueper-slides
+    :breakpoints="breakpoints"
+    class="no-shadow"
+    fade
+    :touchable="false"
+  >
     <vueper-slide
       v-for="i in 4"
       :key="i"
       :style="'background-color: ' + ['white', 'white'][i % 2]"
     >
       <template v-slot:content>
-        <!-- <i class="icon icon-check"></i>
-        Complex content with Vue.js
-        {{ 1 === 1 ? "interpreted" : "non-interpreted" }} compilable content &
-        <span v-pre>{{ mustaches }}</span
-        >. -->
         <NewsObject>
-          <template #headline>News Headline #{{i}}</template>
+          <template #headline>News Headline #{{ i }}</template>
           <template #content>
             <p>
               Premier engineering and science institute BITS Pilani has
@@ -22,11 +22,6 @@
               and Anuradha Palakurthi -- made the announcement on Friday, during
               the ruby anniversary celebrations of Prashanth’s 1978-83 batch.
             </p>
-            <!-- <p>
-              More than 200 alumni of the batch have gathered from all over the
-              world to relive their campus memories in the desert town of Pilani
-              in Rajasthan from November 16-18.
-            </p> -->
           </template>
           <template #image>
             <img
@@ -38,14 +33,6 @@
       </template>
     </vueper-slide>
   </vueper-slides>
-  <!-- <vueper-slides>
-    <vueper-slide
-      v-for="(slide, i) in slides"
-      :key="i"
-      :title="slide.title"
-      :content="slide.content"
-    />
-  </vueper-slides> -->
 </template>
 
 <script>
@@ -57,6 +44,11 @@ export default {
   name: "NewsSlider",
   components: { VueperSlides, VueperSlide, NewsObject },
   data: () => ({
+    breakpoints: {
+      780: {
+        fixedHeight: "80vh",
+      },
+    },
     autoPlaying: true,
     internalAutoPlaying: true,
     slides: [
@@ -117,5 +109,30 @@ export default {
 .vueperslides__bullet--active {
   opacity: 1;
   transform: scale(1);
+}
+
+@media screen and (max-width: 780px) {
+  .newsSliderContainer .vueperslides__arrow--prev {
+    left: -0.6em;
+  }
+
+  .newsSliderContainer .vueperslides__arrow--next {
+    right: -0.6em;
+  }
+
+  .newsSliderContainer .vueperslides__arrow svg {
+    width: 3em;
+  }
+}
+</style>
+
+<style scoped>
+@media screen and (max-width: 780px) {
+  .vueperslide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 </style>

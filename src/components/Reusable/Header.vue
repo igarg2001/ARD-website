@@ -10,7 +10,7 @@
       </div>
       <div class="navElement">Reunions</div>
       <div class="navElement">Events</div>
-      <div class="navElement">Newsletters</div>
+      <div class="navElement"><router-link to="/newsletters">Newsletters</router-link></div>
       <div class="navElement">Contact Us</div>
       <div class="dropdown navElement">
         <div class="dropdownHeading navElement">More ▼</div>

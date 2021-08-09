@@ -1,13 +1,15 @@
 <template lang="">
-<div id="heroContainer">
-    <Header id="header" :isOpaque="false"/>
+  <div id="heroContainer">
+    <Header id="header" :isOpaque="false" />
     <HeroSlider />
     <div id="heroTextContent">
       <div id="heroImpactText">
         DISTINGUISHED ALUMNI <span class="orange">AWARDS</span>
       </div>
       <div id="heroSubText">
-        Every year, BITS Pilani feels proud to celebrate and felicitate its alumni who have made significant contributions in their field of operations. Constituted in 2011. 
+        Every year, BITS Pilani feels proud to celebrate and felicitate its
+        alumni who have made significant contributions in their field of
+        operations. Constituted in 2011.
       </div>
       <div id="heroCTAButtons">
         <OrangeButton displayText="Eligibility criteria" type="outline" />
@@ -16,46 +18,44 @@
     </div>
   </div>
   <PageSection>
-      <template #heading>DISTINGUISHED ALUMNI AWARDS</template>
-      <template #content>
-  <div id="contentText">
-    Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa Campus
-    for the year of 2020. The event was hosted by the honorable Chancellor - Mr.
-    Kumar Mangalam Birla and Vice Chancellor - Prof. Souvik Bhattacharyya. The
-    event was well received by various prominent personalities including the
-    list of Awardees.
-  </div>
-</template>
-</PageSection>
- <div id="buttonCont">
+    <template #heading>DISTINGUISHED ALUMNI AWARDS</template>
+    <template #content>
+      <div id="contentText">
+        Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa
+        Campus for the year of 2020. The event was hosted by the honorable
+        Chancellor - Mr. Kumar Mangalam Birla and Vice Chancellor - Prof. Souvik
+        Bhattacharyya. The event was well received by various prominent
+        personalities including the list of Awardees.
+      </div>
+    </template>
+  </PageSection>
+  <div id="buttonCont">
     <OrangeButton displayText="2020" type="filled" />
-      <OrangeButton displayText="2019" type="outline" color/>
-       <OrangeButton displayText="2018" type="outline" color/>
-        <OrangeButton displayText="2017" type="outline" color/>
-         <OrangeButton displayText="2016" type="outline" color/>
- </div>
- <div id="awardeesCarouselContainer">
-     <div class="headingText">LIST OF AWARDEES</div>
- </div>
- <div id="galleryContainer">
-   <div class="headingCont">
-       <div class="headingText whiteHeading">GALLERY</div>
-   <div class="headingUnderline"></div>
-   
-   </div>
-  <ImageGrid />
-  <div id="loadMoreButton">
-    <OrangeButton displayText="Load More" type="filled" />
+    <OrangeButton displayText="2019" type="outline" color />
+    <OrangeButton displayText="2018" type="outline" color />
+    <OrangeButton displayText="2017" type="outline" color />
+    <OrangeButton displayText="2016" type="outline" color />
   </div>
-   
- </div>
+  <div id="awardeesCarouselContainer">
+    <div class="headingText">LIST OF AWARDEES</div>
+  </div>
+  <div id="galleryContainer">
+    <div class="headingCont">
+      <div class="headingText whiteHeading">GALLERY</div>
+      <div class="headingUnderline"></div>
+    </div>
+    <ImageGrid />
+    <div id="loadMoreButton">
+      <OrangeButton displayText="Load More" type="filled" />
+    </div>
+  </div>
 </template>
 <script>
 import Header from "../components/Reusable/Header";
 import HeroSlider from "../components/HeroSlider";
 import OrangeButton from "../components/Reusable/Buttons/OrangeButton";
 import PageSection from "../components/Reusable/PageSection";
-import ImageGrid from '../components/Reusable/ImageGrid';
+import ImageGrid from "../components/Reusable/ImageGrid";
 export default {
   name: "HomePage",
   components: {
@@ -63,7 +63,7 @@ export default {
     HeroSlider,
     OrangeButton,
     PageSection,
-    ImageGrid
+    ImageGrid,
   },
 };
 </script>
@@ -141,19 +141,19 @@ export default {
   text-align: center;
 }
 #buttonCont {
-    width: 95%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 2.5%
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 2.5%;
 }
 #buttonCont > div {
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 0
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
 }
 .headingText {
   font-family: "Maven Pro", sans-serif;
@@ -167,17 +167,17 @@ export default {
   color: white;
 }
 #awardeesCarouselContainer {
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 2.5%;
-    margin-top: 4%
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2.5%;
+  margin-top: 4%;
 }
 #galleryContainer {
   width: 100%;
-  background-color: #1b1b1b;
+  background-color: var(--gray);
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -187,9 +187,9 @@ export default {
 }
 .headingUnderline {
   width: 100%;
-    max-width: 15vw;
-    height: 10px;
-    background-color: #ff9233;
-    margin-bottom: 80px;
+  max-width: 15vw;
+  height: 10px;
+  background-color: #ff9233;
+  margin-bottom: 80px;
 }
 </style>

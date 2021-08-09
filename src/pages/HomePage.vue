@@ -20,7 +20,7 @@
     <template #heading>Impact Numbers</template>
     <template #content>
       <div class="imapctNumberCapsulesContainer">
-        <NumberCapsule number="600+" text="Entrepreneurs" />
+        <NumberCapsule :number="num + '+'" text="Entrepreneurs" />
         <NumberCapsule number="3500+" text="Managers" />
         <NumberCapsule number="450+" text="Academicians" />
       </div>
@@ -42,16 +42,64 @@
       </div>
     </template>
   </PageSection>
+  <PageSection>
+    <template #heading>Quick Links</template>
+    <template #content>
+      <div class="quickLinksContainer">
+        <BackgroundWithTextTile
+          displayText="ALUMNI RELATIONS CELL"
+          link="https://localhost:4000"
+          image="../assets/HomePage/AchieversSlides/(9).jpeg"
+        />
+        <BackgroundWithTextTile
+          displayText="DISTINGUISHED ALUMNI AWARDS"
+          link="https://localhost:4000"
+          image="../assets/HomePage/AchieversSlides/(9).jpeg"
+        />
+        <BackgroundWithTextTile
+          displayText="REUNIONS"
+          link="https://localhost:4000"
+          image="../assets/HomePage/AchieversSlides/(9).jpeg"
+        />
+        <BackgroundWithTextTile
+          displayText="EVENTS"
+          link="https://localhost:4000"
+          image="../assets/HomePage/AchieversSlides/(9).jpeg"
+        />
+        <BackgroundWithTextTile
+          displayText="GIVING BACK TO BITS"
+          link="https://localhost:4000"
+          image="../assets/HomePage/AchieversSlides/(9).jpeg"
+        />
+        <BackgroundWithTextTile
+          displayText="ECHO NEWSLETTERS"
+          link="https://localhost:4000"
+          image="../assets/HomePage/AchieversSlides/(9).jpeg"
+        />
+        <BackgroundWithTextTile
+          displayText="MERCHANDISE"
+          link="https://localhost:4000"
+          image="../assets/HomePage/AchieversSlides/(9).jpeg"
+        />
+        <BackgroundWithTextTile
+          displayText="VIEW GALLERY"
+          link="https://localhost:4000"
+          image="../assets/HomePage/AchieversSlides/(9).jpeg"
+        />
+      </div>
+    </template>
+  </PageSection>
 </template>
 
 <script>
-import Header from "../components/Reusable/Header";
-import HeroSlider from "../components/HeroSlider";
-import OrangeButton from "../components/Reusable/Buttons/OrangeButton";
-import PageSection from "../components/Reusable/PageSection";
-import NumberCapsule from "../components/Reusable/NumberCapsule";
-import NewsSlider from "../components/NewsSlider";
-import AchieversSlider from "../components/AchieversSlider";
+import Header from "@/components/Reusable/Header";
+import HeroSlider from "@/components/HeroSlider";
+import OrangeButton from "@/components/Reusable/Buttons/OrangeButton";
+import PageSection from "@/components/Reusable/PageSection";
+import NumberCapsule from "@/components/Reusable/NumberCapsule";
+import NewsSlider from "@/components/NewsSlider";
+import AchieversSlider from "@/components/AchieversSlider";
+import BackgroundWithTextTile from "@/components/Reusable/Buttons/BackgroundWithTextTile";
 
 export default {
   name: "HomePage",
@@ -63,6 +111,18 @@ export default {
     NumberCapsule,
     NewsSlider,
     AchieversSlider,
+    BackgroundWithTextTile,
+  },
+  data() {
+    return {
+      num: 0,
+    };
+  },
+  async created() {
+    // GET request using fetch with async/await
+    const response = await fetch("https://api.npms.io/v2/search?q=vue");
+    const data = await response.json();
+    this.num = data.total;
   },
 };
 </script>
@@ -101,7 +161,7 @@ export default {
 
 #heroImpactText {
   font-family: "Maven Pro", sans-serif;
-  font-size: 3.2vw;
+  font-size: 60px;
   color: white;
   font-weight: 900;
   white-space: nowrap;
@@ -110,7 +170,7 @@ export default {
 }
 
 #heroSubText {
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: 1px;
   margin-bottom: 40px;
   color: white;
@@ -150,21 +210,75 @@ export default {
   width: 85vw;
   border: 2px solid var(--orange);
   box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.1);
+  /* height: 300px */
 }
 
 .achieversSliderContainer {
   width: 95vw;
-  /* border: 2px solid var(--orange); */
-  /* box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.1); */
 }
 
-/deep/ .achieversSliderContainer .vueperslides__arrow {
-  /* border-radius: 50%; */
-  /* transform: scaleX(2); */
-  background-color: #21244f;
-  color: white;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
+.quickLinksContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90vw;
+}
+
+.quickLinksContainer > div {
+  margin: 25px 25px;
+}
+
+@media screen and (max-width: 780px) {
+  #heroImpactText {
+    font-size: 7vw;
+  }
+
+  #heroSubText {
+    font-size: 5vw;
+  }
+
+  #heroCTAButtons {
+    flex-direction: column-reverse;
+  }
+
+  #heroCTAButtons > div {
+    font-size: 4vw;
+    width: 90vw;
+  }
+
+  #heroCTAButtons div:first-child {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .imapctNumberCapsulesContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .imapctNumberCapsulesContainer > div {
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
+
+  .imapctNumberCapsulesContainer > div:last-child {
+    margin-bottom: 0px;
+  }
+
+  .newsSliderContainer {
+    height: max-content;
+    width: 95vw;
+  }
+
+  .quickLinksContainer {
+    width: 95vw;
+  }
+
+  .quickLinksContainer > div {
+    margin: 10px 10px;
+  }
 }
 </style>
