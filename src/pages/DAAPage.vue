@@ -44,7 +44,7 @@
    <div class="headingCont">
        <div class="headingText whiteHeading">GALLERY</div>
    <div class="headingUnderline"></div>
-   
+   </div>
    </div>
   <ImageGrid />
   <div id="loadMoreButton">
