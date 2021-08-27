@@ -16,11 +16,11 @@
       <div class="dropdown navElement">
         <div class="dropdownHeading navElement">More ▼</div>
         <div class="dropdownContent">
-          <div class="dropdownElement">Newsletters</div>
           <div class="dropdownElement">
-            <router-link to="/daa"><p>Distinguished Alumni Awards</p></router-link>
+            <router-link to="/newsletters">Newsletters</router-link>
           </div>
-          <div class="dropdownElement">Contact Us</div>
+          <div class="dropdownElement">Link 2</div>
+          <div class="dropdownElement">Link 3</div>
         </div>
       </div>
       <OrangeButton
@@ -168,11 +168,5 @@ export default {
 
 #BITScolors > svg {
   width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-  #header {
-    display: none;
-  }
 }
 </style>

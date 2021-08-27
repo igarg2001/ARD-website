@@ -7,7 +7,7 @@
       <div class="headingUnderline"></div>
     </div>
     <slot name="content"></slot>
-    <slot></slot>
+    <!-- <slot></slot> -->
   </div>
 </template>
 
@@ -49,15 +49,34 @@ export default {
 }
 
 .headingUnderline {
-    width: 100%;
-    max-width: 15vw;
-    height: 10px;
-    background-color: var(--orange);
-    margin-bottom: 80px;
+  width: 100%;
+  max-width: 15vw;
+  height: 10px;
+  background-color: var(--orange);
+  margin-bottom: 80px;
 }
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 780px) {
+  .pageSection {
+    margin-top: 75px;
+    margin-bottom: 100px;
+  }
+
   .pageSectionHeadingText {
-    font-size: 4.64vw;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 800;
+    color: #353535;
+    text-transform: uppercase;
+    font-size: 7vw;
+    padding-bottom: 10px;
+  }
+
+  .headingUnderline {
+    width: 100%;
+    max-width: 50vw;
+    height: 7px;
+    background-color: var(--orange);
+    margin-bottom: 40px;
   }
 }
 </style>
