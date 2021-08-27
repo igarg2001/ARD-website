@@ -290,4 +290,56 @@ export default {
     background-color: #ff9233;
     margin-bottom: 80px;
 }
+@media screen and (max-width: 768px) {
+  #heroContainer {
+    min-height: 50vh;
+  }
+  #heroSection {
+    height: 100%;
+  }
+  #heroSection img {
+    height: 100%;
+  }
+  #heroSection .overlay {
+    height: 100%
+  }
+
+  #heroSection .overlay p {
+    font-size: 6.5vw;
+  }
+  #contentText {
+    font-size: 17px;
+  }
+  #heroImpactText {
+    font-size: 5.5vw
+  }
+  #heroSubText {
+    font-size: 18px
+  }
+  #heroCTAButtons {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+  }
+  #heroCTAButtons >div:first-child {
+    margin-right: 0;
+    margin-bottom: 5vh
+  }
+  #buttonCont {
+    flex-direction: column;
+    margin-bottom: 8vh
+  }
+  #buttonCont > div {
+    width: 75%
+  }
+  #buttonCont > div:nth-last-child(-n+2) {
+    display: none
+  }
+  #buttonCont > div:nth-child(n-2) {
+    margin-bottom: 3vh
+  }
+  .headingText {
+    font-size: 4.64vw
+  }
+}
 </style>

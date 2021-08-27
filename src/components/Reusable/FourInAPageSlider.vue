@@ -7,7 +7,7 @@
   :gap="3"
   :slide-ratio="1 / 2.5"
   :dragging-distance="200"
-  :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }">
+  :breakpoints="{ 800: { visibleSlides: 1, slideRatio: 1.75 } }">
   <vueper-slide v-for="i in data" :key="i">
       <template v-slot:content>
           <div id="slideWrapper">
@@ -27,7 +27,7 @@
 <script>
 import { VueperSlides, VueperSlide } from "vueperslides";
 import TelephoneIcon from "@/assets/svg/telephone-fill.svg";
-import EnvelopeIcon from "@/assets/svg/envelope-fill.svg"
+import EnvelopeIcon from "@/assets/svg/envelope-fill.svg";
 export default {
   created() {
     // this.myData.map(i => console.log(typeof(i.image)))
@@ -46,7 +46,7 @@ export default {
   setup() {
     return {
       TelephoneIcon,
-      EnvelopeIcon
+      EnvelopeIcon,
     };
   },
   methods: {
@@ -113,5 +113,15 @@ export default {
 #slideWrapper #icons img {
   width: 25px;
   height: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  #wrapper {
+    margin-top: -10vh
+  }
+  #slideWrapper {
+    width: 90%;
+    margin-left: 5%
+  }
 }
 </style>

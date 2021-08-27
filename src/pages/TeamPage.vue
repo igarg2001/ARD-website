@@ -196,4 +196,26 @@ export default {
   font-size: 23px;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  #heroContainer {
+    min-height: 50vh;
+  }
+  #heroSection {
+    height: 100%;
+  }
+  #heroSection img {
+    height: 100%;
+  }
+  #heroSection .overlay {
+    height: 100%
+  }
+
+  #heroSection .overlay p {
+    font-size: 6.5vw;
+  }
+  #contentText {
+    font-size: 17px;
+  }
+}
 </style>

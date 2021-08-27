@@ -55,4 +55,9 @@ export default {
     background-color: var(--orange);
     margin-bottom: 80px;
 }
+@media screen and (max-width: 768px) {
+  .pageSectionHeadingText {
+    font-size: 4.64vw;
+  }
+}
 </style>

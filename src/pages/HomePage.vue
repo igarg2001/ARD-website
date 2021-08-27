@@ -42,6 +42,7 @@
       </div>
     </template>
   </PageSection>
+  <Footer />
 </template>
 
 <script>
@@ -52,6 +53,7 @@ import PageSection from "../components/Reusable/PageSection";
 import NumberCapsule from "../components/Reusable/NumberCapsule";
 import NewsSlider from "../components/NewsSlider";
 import AchieversSlider from "../components/AchieversSlider";
+import Footer from "../components/Reusable/Footer.vue"
 
 export default {
   name: "HomePage",
@@ -63,7 +65,9 @@ export default {
     NumberCapsule,
     NewsSlider,
     AchieversSlider,
+    Footer
   },
+
 };
 </script>
 

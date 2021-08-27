@@ -6,19 +6,21 @@
     <div id="nav">
       <div class="navElement"><router-link to="/">Home</router-link></div>
       <div class="navElement">
-        <router-link to="/team">Alumni relations cell</router-link>
-      </div>
-      <div class="navElement">
-        <router-link to="/daa">Distinguished Alumni</router-link>
+        <a target="_blank" href="https://bitsaa.org">Community</a>
       </div>
       <div class="navElement">Events &#38; Reunions</div>
-      <div class="navElement">Contact Us</div>
+      <div class="navElement">Merchandise</div>
+      <div class="navElement">
+        <router-link to="/team">Alumni relations team</router-link>
+      </div>
       <div class="dropdown navElement">
         <div class="dropdownHeading navElement">More ▼</div>
         <div class="dropdownContent">
           <div class="dropdownElement">Newsletters</div>
-          <div class="dropdownElement">Link 2</div>
-          <div class="dropdownElement">Link 3</div>
+          <div class="dropdownElement">
+            <router-link to="/daa"><p>Distinguished Alumni Awards</p></router-link>
+          </div>
+          <div class="dropdownElement">Contact Us</div>
         </div>
       </div>
       <OrangeButton
@@ -98,6 +100,8 @@ export default {
   font-weight: 800;
 }
 
+
+
 .dropdownContent {
   display: flex;
   flex-direction: column;
@@ -144,7 +148,9 @@ export default {
 .dropdownElement:hover {
   background-color: #ddd;
 }
-
+.dropdownElement p {
+  color: black
+}
 .dropdown:hover .dropdownContent {
   opacity: 1;
   transition: opacity 0.2s ease-out;
@@ -162,5 +168,11 @@ export default {
 
 #BITScolors > svg {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    display: none;
+  }
 }
 </style>

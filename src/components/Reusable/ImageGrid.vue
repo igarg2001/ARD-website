@@ -86,5 +86,16 @@ export default {
         font-size: 36px;
         font-weight: 800;
     }
+    @media screen and (max-width: 768px) {
+        .overlay {
+            font-size: 16px
+        }
+        .column {
+            margin-bottom: 10%;
+        }
+        .element {
+            width: 45%
+        }
+    }
 
 </style>
