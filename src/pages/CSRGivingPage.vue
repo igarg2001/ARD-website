@@ -1,6 +1,6 @@
 <template>
   <Header :isOpaque="true" />
-  <OpaquePageTitle title="Alumni Giving" normal="Alumni" emphasis="Giving" />
+  <OpaquePageTitle title="CORPORATE SOCIAL RESPONSIBILTY" normal="Corporate Social Responsibility" emphasis="Giving at BITS PIlani" :newLine="true" />
   <PageSection>
     <template #heading>OVERVIEW</template>
     <template #content>
@@ -12,6 +12,16 @@
         personalities including the list of Awardees.
       </div>
     </template>
+  </PageSection>
+  <PageSection>
+    <template #heading>ELIGIBLE AREAS UNDER CSR</template>
+    <div id="CSRgridWrapper">
+      <div id="gridLine">
+        <div id="box">
+          MCN Scholarships
+        </div>
+      </div>
+    </div>
   </PageSection>
   <PageSection>
     <template #heading>ONGOING CAMPAIGNS</template>
