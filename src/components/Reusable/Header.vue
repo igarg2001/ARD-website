@@ -23,11 +23,13 @@
           <div class="dropdownElement">Link 3</div>
         </div>
       </div>
-      <OrangeButton
-        displayText="Giving Back"
-        type="outline"
-        style="margin-left: 40px"
-      />
+      <router-link to="/givingback" class="gb">
+        <OrangeButton
+          displayText="Giving Back"
+          type="outline"
+          style="margin-left: 40px"
+        />
+      </router-link>
     </div>
   </div>
 </template>
@@ -59,7 +61,7 @@ export default {
   user-select: none;
   font-weight: 400;
   font-family: "Maven Pro", sans-serif;
-  width: 100vw;
+  width: 99.2vw;
   color: white;
 }
 
@@ -100,8 +102,6 @@ export default {
   font-weight: 800;
 }
 
-
-
 .dropdownContent {
   display: flex;
   flex-direction: column;
@@ -129,6 +129,10 @@ export default {
   border-bottom: 0px !important;
 }
 
+.gb {
+  text-decoration: none;
+}
+
 .dropdown:hover {
   padding-bottom: 1px;
   border-bottom: 0px !important;
@@ -149,7 +153,7 @@ export default {
   background-color: #ddd;
 }
 .dropdownElement p {
-  color: black
+  color: black;
 }
 .dropdown:hover .dropdownContent {
   opacity: 1;

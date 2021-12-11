@@ -30,22 +30,38 @@
           egestas massa pretium ultricies neque. Rutrum viverra eu bibendum
           morbi iaculis gravida nisl.
         </div>
-      <div id="CTAButtons">
-        <OrangeButton displayText="Alumni Giving" type="outline" :color="true" style="min-width: 20vw; text-align:center" />
-        <OrangeButton displayText="Corporate Social Responsibility" type="filled" style="min-width: 20vw; text-align:center" />
-      </div>
+        <div id="CTAButtons">
+          <OrangeButton
+            displayText="Alumni Giving"
+            type="outline"
+            :color="true"
+            style="min-width: 20vw; text-align: center"
+          />
+          <router-link to="/alumnigiving" class="routerbuttons">
+            <OrangeButton
+              displayText="Corporate Social Responsibility"
+              type="filled"
+              style="min-width: 20vw; text-align: center"
+            />
+          </router-link>
+        </div>
       </template>
     </PageSection>
     <BlackFooter>
-      <template #text>
-        Wishing to Donate? Get in touch!
-      </template>
+      <template #text> Wishing to donote? Get in touch! </template>
       <template #buttons>
-        <OrangeButton displayText="Call Us @99999-99999" type="outline" style="min-width: 15vw; text-align:center; margin-right: 2vw" />
-        <OrangeButton displayText="Write an E-Mail" type="filled" style="min-width: 15vw; text-align:center" />
+        <OrangeButton
+          displayText="Call Us @99999-99999"
+          type="outline"
+          style="min-width: 15vw; text-align: center; margin-right: 2vw"
+        />
+        <OrangeButton
+          displayText="Write an E-Mail"
+          type="filled"
+          style="min-width: 15vw; text-align: center"
+        />
       </template>
     </BlackFooter>
-
   </div>
 </template>
 
@@ -66,7 +82,7 @@ export default {
     PageSection,
     NumberCapsule,
     OrangeButton,
-    BlackFooter
+    BlackFooter,
   },
 };
 </script>
@@ -139,9 +155,8 @@ export default {
   margin-bottom: 2vw;
 }
 
-
 #CTAButtons {
-  margin-top:50px;
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -149,7 +164,7 @@ export default {
 }
 
 #CTAButtons > div {
-  padding: 15px 40px;
+  /* padding: 15px 40px; */
   font-size: 19px;
 }
 
@@ -157,6 +172,11 @@ export default {
   margin-right: 60px;
 }
 
+.routerbuttons {
+  height: 100%;
+  text-decoration: none;
+  
+}
 
 @media screen and (max-width: 768px) {
   #heroContainer {
@@ -195,7 +215,6 @@ export default {
     margin-bottom: 0px;
   }
 
-  
   #CTAButtons {
     flex-direction: column-reverse;
   }

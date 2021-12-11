@@ -3,11 +3,11 @@
       <vueper-slides
   class="no-shadow"
   :visible-slides="4"
+  :touchable="false"
   slide-multiple
-  :gap="3"
+  :gap="2"
   :slide-ratio="1 / 2.5"
-  :dragging-distance="200"
-  :breakpoints="{ 800: { visibleSlides: 1, slideRatio: 1.75 } }">
+  >
   <vueper-slide v-for="i in data" :key="i">
       <template v-slot:content>
           <div id="slideWrapper">
@@ -72,7 +72,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 7.5% 10%;
+  padding: 7.5% 5%;
+  width: 95%;
+  margin-left: 2.5%;
   /* position: relative; */
 }
 

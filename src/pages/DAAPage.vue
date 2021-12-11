@@ -45,11 +45,12 @@
        <div class="headingText whiteHeading">GALLERY</div>
    <div class="headingUnderline"></div>
    </div>
-   </div>
-  <ImageGrid />
-  <div id="loadMoreButton">
-    <OrangeButton displayText="Load More" type="filled" />
+   <ImageGrid />
+   <div id="loadMoreButton">
+    <OrangeButton displayText="Load More" type="filled" :flexibleWidth="true" />
   </div>
+   </div>
+
 </template>
 <script>
 import Header from "../components/Reusable/Header";
@@ -170,7 +171,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100vw;
+  width: 99.2vw;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -289,6 +290,10 @@ export default {
   height: 10px;
   background-color: #ff9233;
   margin-bottom: 80px;
+}
+
+#loadMoreButton {
+  width: 10%
 }
 @media screen and (max-width: 768px) {
   #heroContainer {

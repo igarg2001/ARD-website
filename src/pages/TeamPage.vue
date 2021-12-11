@@ -159,7 +159,7 @@ export default {
   position: absolute;
   top: 0;
   z-index: -1;
-  width: 100vw;
+  width: 99.2vw;
 }
 #heroSection img {
   height: auto;

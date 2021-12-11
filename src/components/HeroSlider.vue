@@ -80,7 +80,7 @@ export default {
 
 <style>
 #fullPage {
-  width: 100vw;
+  width: 99.2vw;
   height: 100vh;
   position: absolute;
   top:0;
