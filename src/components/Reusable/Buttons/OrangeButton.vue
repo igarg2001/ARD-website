@@ -21,7 +21,7 @@ export default {
     type: String,
     color: Boolean,
     flexibleWidth: Boolean,
-    flexibleHeight: Boolean
+    flexibleHeight: Boolean,
   },
 };
 </script>

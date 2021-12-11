@@ -4,6 +4,7 @@ import Newsletters from "../pages/Newsletters.vue";
 import GivingBackPage from "../pages/GivingBackPage.vue";
 import TeamPage from "../pages/TeamPage.vue";
 import AlumniGivingPage from "../pages/CSRGivingPage.vue";
+import NewsHeadlinePage from "../pages/NewsHeadline.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -37,6 +38,11 @@ const routes = [
     path: "/alumnigiving",
     name: "AlumniGiving",
     component: AlumniGivingPage,
+  },
+  {
+    path: "/news",
+    name: "NewsHeadline",
+    component: NewsHeadlinePage,
   },
 ];
 
