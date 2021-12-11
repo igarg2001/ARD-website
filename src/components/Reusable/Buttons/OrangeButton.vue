@@ -4,6 +4,8 @@
       type === 'filled' ? 'filled' : null,
       type === 'outline' ? 'outline' : null,
       color ? 'color' : null,
+      flexibleWidth ? 'width' : null,
+      flexibleHeight ? 'height': null,
       'button',
     ]"
   >
@@ -18,6 +20,8 @@ export default {
     displayText: String,
     type: String,
     color: Boolean,
+    flexibleWidth: Boolean,
+    flexibleHeight: Boolean
   },
 };
 </script>
@@ -49,5 +53,13 @@ export default {
 }
 .color:hover {
   color: white;
+}
+.width {
+  width: 100%;
+  text-align: center;
+}
+.height {
+  height: 100%;
+  text-align: center;
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div class="opaquePageTitle">
-    {{ normal }} &nbsp; <span class="em"> {{ emphasis }} </span>
+    <div class="text">{{ normal }} &nbsp;<span class="em"> {{ emphasis }}</span></div>
+    
   </div>
 </template>
 
@@ -28,7 +29,10 @@ export default {
   background-color: var(--gray);
   color: white;
 }
-
+.opaquePageTitle .text {
+  width: 50%;
+  text-align: center;
+}
 .em {
   color: #ff9233;
 }

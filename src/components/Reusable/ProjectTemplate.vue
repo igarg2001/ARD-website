@@ -3,7 +3,7 @@
     <img src="../../assets/images/projectimage.png" id="image" />
     <div id="content">
       <h1>PROJECT NAME</h1>
-      <div id="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla interdum volutpat quis iaculis duis vitae parturient. Id pellentesque urna porta ultrices magna. Eros dui convallis sit massa habitant nam lacus, sed. Imperdiet sit et maecenas nunc, scelerisque viverra pretium.  Learn more.</div>
+      <div id="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla interdum volutpat quis iaculis duis vitae parturient. Id pellentesque urna porta ultrices magna. Eros dui convallis sit massa habitant nam lacus, sed. Imperdiet sit et maecenas nunc, scelerisque viverra pretium.  <span class="color">Learn more.</span></div>
 
     </div>
   </div>
@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 #wrapper {
-  width: 85%;
+  width: 100%;
   border: 1px solid #d8cfe9;
   box-sizing: border-box;
   border-radius: 2px;
@@ -25,8 +25,8 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-left: 7.5%;
   padding: 1.5% 1.5%;
+  margin-bottom: 2%;
 }
 #image {
   width: 25%;
@@ -48,5 +48,9 @@ export default {
   /* identical to box height */
 
   color: #08070a;
+}
+.color {
+  color: #F57515;
+  cursor: pointer;
 }
 </style>
