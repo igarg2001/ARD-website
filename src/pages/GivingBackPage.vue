@@ -31,13 +31,14 @@
           morbi iaculis gravida nisl.
         </div>
         <div id="CTAButtons">
-          <OrangeButton
-            displayText="Alumni Giving"
-            type="outline"
-            :color="true"
-            style="min-width: 20vw; text-align: center"
-          />
-          <router-link to="/alumnigiving" class="routerbuttons">
+        <router-link to="/alumnigiving" class="routerbuttons">
+            <OrangeButton
+              displayText="Corporate Social Responsibility"
+              type="filled"
+              style="min-width: 20vw; text-align: center"
+            />
+          </router-link>
+          <router-link to="/csrgiving" class="routerbuttons">
             <OrangeButton
               displayText="Corporate Social Responsibility"
               type="filled"
