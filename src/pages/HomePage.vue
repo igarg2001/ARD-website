@@ -42,6 +42,20 @@
       </div>
     </template>
   </PageSection>
+  <div id="galleryContainer">
+    <div class="headingCont">
+      <div class="headingText whiteHeading">NEWSDESK</div>
+      <div class="headingUnderline"></div>
+    </div>
+    <ImageGrid />
+    <div id="loadMoreButton">
+      <OrangeButton
+        displayText="Load More"
+        type="filled"
+        :flexibleWidth="true"
+      />
+    </div>
+  </div>
   <PageSection>
     <template #heading>Quick Links</template>
     <template #content>
@@ -100,6 +114,7 @@ import NumberCapsule from "@/components/Reusable/NumberCapsule";
 import NewsSlider from "@/components/NewsSlider";
 import AchieversSlider from "@/components/AchieversSlider";
 import BackgroundWithTextTile from "@/components/Reusable/Buttons/BackgroundWithTextTile";
+import ImageGrid from "@/components/Reusable/ImageGrid.vue";
 
 export default {
   name: "HomePage",
@@ -112,6 +127,7 @@ export default {
     NewsSlider,
     AchieversSlider,
     BackgroundWithTextTile,
+    ImageGrid,
   },
   data() {
     return {
@@ -124,7 +140,6 @@ export default {
     const data = await response.json();
     this.num = data.total;
   },
-
 };
 </script>
 
@@ -182,6 +197,40 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.headingText {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 800;
+  color: #353535;
+  text-transform: uppercase;
+  font-size: 2.32vw;
+  padding-bottom: 20px;
+}
+.whiteHeading {
+  color: white;
+}
+
+#galleryContainer {
+  width: 100%;
+  background-color: var(--gray);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.headingUnderline {
+  width: 100%;
+  max-width: 15vw;
+  height: 10px;
+  background-color: #ff9233;
+  margin-bottom: 80px;
+}
+
+#loadMoreButton {
+  width: 10%;
 }
 
 #heroCTAButtons > div {
