@@ -38,7 +38,7 @@
     </PageSection>
     <BlackFooter>
       <template #text>
-        Wishing to donote? Get in touch!
+        Wishing to Donate? Get in touch!
       </template>
       <template #buttons>
         <OrangeButton displayText="Call Us @99999-99999" type="outline" style="min-width: 15vw; text-align:center; margin-right: 2vw" />

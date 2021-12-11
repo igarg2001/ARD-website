@@ -3,7 +3,8 @@ import DAAPage from "../pages/DAAPage.vue";
 import Newsletters from "../pages/Newsletters.vue";
 import GivingBackPage from "../pages/GivingBackPage.vue";
 import TeamPage from "../pages/TeamPage.vue";
-import AlumniGivingPage from "../pages/CSRGivingPage.vue";
+import CSRGivingPage from "../pages/CSRGivingPage.vue";
+import AlumniGivingPage from "../pages/AlumniGivingPage.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -32,6 +33,11 @@ const routes = [
     path: "/team",
     name: "Team",
     component: TeamPage,
+  },
+  {
+    path: "/csrgiving",
+    name: "CSRGiving",
+    component: CSRGivingPage,
   },
   {
     path: "/alumnigiving",

@@ -1,6 +1,6 @@
 <template>
   <div class="opaquePageTitle">
-    {{ normal }} &nbsp; <span class="em"> {{ emphasis }} </span>
+    {{ normal }}&nbsp;<span class="em">{{ emphasis }}</span>
   </div>
 </template>
 

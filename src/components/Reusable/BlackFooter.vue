@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 .container {
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,8 +28,8 @@ export default {
 }
 
 .text {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
 }
 
 .buttons {

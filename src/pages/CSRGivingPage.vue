@@ -40,7 +40,7 @@ import OpaquePageTitle from "../components/Reusable/OpaquePageTitle";
 import PageSection from "../components/Reusable/PageSection";
 import ProjectTemplate from "../components/Reusable/ProjectTemplate.vue";
 export default {
-  name: "AlumniGiving",
+  name: "CSRGiving",
   components: {
     Header,
     OpaquePageTitle,
