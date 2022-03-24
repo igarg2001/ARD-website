@@ -33,8 +33,9 @@
         <div id="CTAButtons">
         <router-link to="/alumnigiving" class="routerbuttons">
             <OrangeButton
-              displayText="Corporate Social Responsibility"
-              type="filled"
+              displayText="Alumni Giving"
+              type="outline"
+              color
               style="min-width: 20vw; text-align: center"
             />
           </router-link>
@@ -49,7 +50,7 @@
       </template>
     </PageSection>
     <BlackFooter>
-      <template #text> Wishing to donote? Get in touch! </template>
+      <template #text> Wishing to donate? Get in touch! </template>
       <template #buttons>
         <OrangeButton
           displayText="Call Us @99999-99999"

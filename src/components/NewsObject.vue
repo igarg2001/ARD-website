@@ -7,11 +7,14 @@
       <div class="content">
         <slot name="content"></slot>
       </div>
-      <OrangeButton
+      <router-link to="/news" style="text-decoration: none; color: inherit" class="orangeButtonNews" target="_blank">
+        <OrangeButton
         class="orangeButtonNews"
         displayText="Read full article"
         type="filled"
       />
+      </router-link>
+      
     </div>
     <div class="imageContainer">
       <slot name="image"></slot>
@@ -115,6 +118,15 @@ export default {
     padding-top: 8px;
     padding-bottom: 8px;
     font-size: 4vw;
+    text-decoration: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a .orangeButtonNews {
+    text-decoration: none;
   }
 }
 </style>

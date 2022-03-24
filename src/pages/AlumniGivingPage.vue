@@ -74,7 +74,7 @@
                     <div class="sectionContent">
                       <div class="flexRow">
                         <div>
-                          <span class="sectionTitle" style="fontSize: 1em"
+                          <span class="sectionTitle" style="fontsize: 1em"
                             >In Numbers</span
                           >
                           <span class="sectionContent">{{
@@ -82,7 +82,7 @@
                           }}</span>
                         </div>
                         <div>
-                          <span class="sectionTitle" style="fontSize: 1em"
+                          <span class="sectionTitle" style="fontsize: 1em"
                             >Amount</span
                           >
                           <span class="sectionContent">{{
@@ -153,6 +153,10 @@ export default {
     // vSelect
   },
   data() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
     return {
       scholarships: [
         {
@@ -171,13 +175,11 @@ export default {
             },
             {
               id: 2,
-              desc:
-                "In fringilla interdum volutpat quis iaculis duis vitae parturient. Id pellentesque urna porta ultrices magna.",
+              desc: "In fringilla interdum volutpat quis iaculis duis vitae parturient. Id pellentesque urna porta ultrices magna.",
             },
             {
               id: 3,
-              desc:
-                "Eros dui convallis sit massa habitant nam lacus, sed. Imperdiet sit et maecenas nunc, scelerisque viverra pretium. ",
+              desc: "Eros dui convallis sit massa habitant nam lacus, sed. Imperdiet sit et maecenas nunc, scelerisque viverra pretium. ",
             },
           ],
         },
@@ -197,13 +199,11 @@ export default {
             },
             {
               id: 2,
-              desc:
-                "In fringilla interdum volutpat quis iaculis duis vitae parturient. Id pellentesque urna porta ultrices magna.",
+              desc: "In fringilla interdum volutpat quis iaculis duis vitae parturient. Id pellentesque urna porta ultrices magna.",
             },
             {
               id: 3,
-              desc:
-                "Eros dui convallis sit massa habitant nam lacus, sed. Imperdiet sit et maecenas nunc, scelerisque viverra pretium. ",
+              desc: "Eros dui convallis sit massa habitant nam lacus, sed. Imperdiet sit et maecenas nunc, scelerisque viverra pretium. ",
             },
           ],
         },
@@ -223,13 +223,11 @@ export default {
             },
             {
               id: 2,
-              desc:
-                "In fringilla interdum volutpat quis iaculis duis vitae parturient. Id pellentesque urna porta ultrices magna.",
+              desc: "In fringilla interdum volutpat quis iaculis duis vitae parturient. Id pellentesque urna porta ultrices magna.",
             },
             {
               id: 3,
-              desc:
-                "Eros dui convallis sit massa habitant nam lacus, sed. Imperdiet sit et maecenas nunc, scelerisque viverra pretium. ",
+              desc: "Eros dui convallis sit massa habitant nam lacus, sed. Imperdiet sit et maecenas nunc, scelerisque viverra pretium. ",
             },
           ],
         },

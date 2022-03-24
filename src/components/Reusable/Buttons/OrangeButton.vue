@@ -3,9 +3,10 @@
     v-bind:class="[
       type === 'filled' ? 'filled' : null,
       type === 'outline' ? 'outline' : null,
+      fontColor === 'black' ? 'black' : null,
       color ? 'color' : null,
       flexibleWidth ? 'width' : null,
-      flexibleHeight ? 'height': null,
+      flexibleHeight ? 'height' : null,
       'button',
     ]"
   >
@@ -20,6 +21,7 @@ export default {
     displayText: String,
     type: String,
     color: Boolean,
+    fontColor: String,
     flexibleWidth: Boolean,
     flexibleHeight: Boolean,
   },
