@@ -12,7 +12,8 @@
     v-bind:style="{
       color: customColor,
       background: type === 'filled' ? customBackground : (type === 'outline' ? 'transparent' : 'white'),
-      borderColor: customBorder
+      borderColor: customBorder,
+      ...customStyle
     }"
   >
     {{ displayText }}
@@ -31,7 +32,8 @@ export default {
     flexibleHeight: Boolean,
     customColor: String,
     customBackground: String,
-    customBorder: String
+    customBorder: String,
+    customStyle: Object
   },
 };
 </script>

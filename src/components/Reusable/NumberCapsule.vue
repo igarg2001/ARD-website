@@ -27,6 +27,8 @@ export default {
   align-items: center;
   padding: 20px;
   min-width: 345px;
+  z-index: 5;
+  background: white;
 }
 
 .number {

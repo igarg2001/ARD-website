@@ -12,9 +12,10 @@
         class="orangeButtonNews"
         displayText="Read full article"
         type="filled"
+        customBackground="#4F53FF"
+        :customStyle="{padding: '10px 0', marginLeft: '15px', fontFamily:'AmsiPro', fontSize: '16px', fontWeight: 900}"
       />
       </router-link>
-      
     </div>
     <div class="imageContainer">
       <slot name="image"></slot>
@@ -39,42 +40,46 @@ export default {
   width: 88%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   /* background-color: white; */
   color: #08070a;
+  border-radius: 2px;
+  padding: 60px 0;
+ 
 }
 
 .contentContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
+  align-items: center;
+  width: 88%;
   height: 75%;
   /* background-color: grey; */
   text-align: left;
+  margin-top: 10px;
 }
 
 .imageContainer {
   height: 75%;
-  width: 100%;
+  width: 88%;
   margin-left: 30px;
   /* background-color: pink; */
 }
-
 .headline {
-  font-weight: 800;
-  font-size: 38px;
-  text-transform: uppercase;
+  font-family: "Urby", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
-
 .content {
   font-size: 16px;
   height: 100%;
+  font-family: "AmsiProNarw", sans-serif;
+  font-weight: 300;
+  margin-left: 15px;
 }
-
 .orangeButtonNews {
   width: 100% !important;
   text-align: center;

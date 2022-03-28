@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    name: "Newsletters",
+    name: "NewsletterComponent",
     props: {
       title: String,
       year: Number,

@@ -1,9 +1,8 @@
 <template lang="">
  <Header id="header" />
 <OpaquePageTitle normal="Alumni Relations Cell" />
-    <div id="pageSection">
-        <PageSection>
-            <template #heading>ALUMNI RELATIONS CELL</template>
+            <PageSection>
+            <template #heading>Meet the Team</template>
             <template #content>
   <div id="contentText">
     Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa Campus
@@ -14,9 +13,11 @@
   </div>
 </template>
         </PageSection>
-        <FourInAPageSlider :data="teamData"/>
+        <div class="carouselContainer">
+           <FourInAPageSlider :data="teamData"/>
+        </div>
         <PageSection>
-           <template #heading>SARC</template>
+           <template #heading>Student's Alumni Relations Cell (SARC)</template>
             <template #content>
   <div id="contentText">
     Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa Campus
@@ -27,7 +28,15 @@
   </div>
 </template>
         </PageSection>
-    </div>
+        <div id="buttonCont">
+<OrangeButton displayText="Pilani" type="filled" customBorder="#F16582" customColor="white" customBackground="#F16582"  />
+<OrangeButton displayText="Goa" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
+<OrangeButton displayText="Hyderabad" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
+<OrangeButton displayText="Dubai" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
+</div>
+          <div class="carouselContainer">
+           <FourInAPageSlider :data="teamData"/>
+        </div>
     
 </template>
 
@@ -36,6 +45,7 @@ import Header from "../components/Reusable/Header.vue";
 import PageSection from "../components/Reusable/PageSection.vue";
 import FourInAPageSlider from "../components/Reusable/FourInAPageSlider.vue";
 import OpaquePageTitle from "../components/Reusable/OpaquePageTitle.vue";
+import OrangeButton from "../components/Reusable/Buttons/OrangeButton.vue"
 const teamData = [
   {
     id: 1,
@@ -138,52 +148,49 @@ export default {
     PageSection,
     FourInAPageSlider,
     OpaquePageTitle,
+    OrangeButton
   },
 };
 </script>
 <style scoped>
-#heroSection {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 99.2vw;
+#contentText {
+  /* text white shadow */
+  text-shadow: 0px 4px 60px #ffffff;
+  font-family: "AmsiProCond", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #3f4d8c;
 }
-#heroSection img {
-  height: auto;
-  width: 100%;
+.carouselContainer {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2.5%;
+  /* margin-top: -8% */
 }
 
-#heroSection .overlay {
-  position: absolute;
-  background: rgba(8, 7, 10, 0.8);
-  height: 99%;
-  width: 100%;
-  top: 0;
+.carouselContainer {
+  margin-top: -8%
+}
+#buttonCont {
+  width: 85%;
+  margin-left: 7.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 8%;
+  margin-top: -6%
+
+}
+#buttonCont > div {
+  width: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px 0;
 }
-#heroSection .overlay p {
-  font-family: "Maven Pro", sans-serif;
-  font-size: 3vw;
-  color: white;
-  font-weight: 900;
-  white-space: nowrap;
-  text-align: center;
-  margin-top: 4vh;
-}
-
-#contentText {
-  width: 85%;
-  color: #08070a;
-
-  /* text white shadow */
-  text-shadow: 0px 4px 60px #ffffff;
-  font-family: "Baloo 2", sans-serif;
-  font-size: 23px;
-  text-align: center;
-}
-
 @media screen and (max-width: 768px) {
   #heroContainer {
     min-height: 50vh;

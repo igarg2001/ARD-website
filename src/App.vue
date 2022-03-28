@@ -14,6 +14,12 @@ export default {
 <style>
 @font-face {
   font-family: "Urby";
+  src: url('~@/fonts/Urby Regular.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Urby";
   src: url('~@/fonts/Urby Black.otf');
   font-style: normal;
   font-weight: 900;

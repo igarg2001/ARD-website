@@ -40,7 +40,7 @@
 <script>
 // import OrangeButton from "./Buttons/OrangeButton";
 export default {
-  name: "Header",
+  name: "HeaderComponent",
   components: {
     // OrangeButton,
   },

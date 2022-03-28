@@ -6,6 +6,7 @@ import TeamPage from "../pages/TeamPage.vue";
 import CSRGivingPage from "../pages/CSRGivingPage.vue";
 import AlumniGivingPage from "../pages/AlumniGivingPage.vue";
 import NewsHeadlinePage from "../pages/NewsHeadline.vue";
+import ReunionPage from "../pages/ReunionPage.vue"
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -50,6 +51,11 @@ const routes = [
     name: "NewsHeadline",
     component: NewsHeadlinePage,
   },
+  {
+    path: "/events",
+    name: "ReunionPage",
+    component: ReunionPage
+  }
 ];
 
 const router = createRouter({

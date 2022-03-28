@@ -23,13 +23,17 @@ export default {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    background-color: #000;
+    background-color:  #F0F0FF;
     color: #fff;
 }
 
 .text {
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
+    color: #1D74B7;
+    font-family: "Urby", sans-serif;
+    font-weight: 700;
+    font-size: 46px;
 }
 
 .buttons {

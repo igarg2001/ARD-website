@@ -11,6 +11,8 @@
       </div>
     </div>
   </div>
+   <img src="../assets/svg/homeVector.svg" class="homeVector"/>
+   <img src="../assets/svg/smallHomeVector.svg" class="homeVector smallHomeVector"/>
   <PageSection>
     <template #heading>Growing Impact</template>
     <template #content>
@@ -29,8 +31,9 @@
       </div>
     </template>
   </PageSection>
+  
   <PageSection>
-    <template #heading>Thank you Donors</template>
+    <template #heading>Creating headlines</template>
     <template #content>
       <div class="newsSliderContainer">
         <NewsSlider />
@@ -50,16 +53,28 @@
       <div class="headingText whiteHeading">Making stories</div>
     </div>
     <div class="tabs">
-      <div :class="{'tab-item': true, 'selected': selectActive[0]==true}" @click="selectClassMakingStories(0)">
+      <div
+        :class="{ 'tab-item': true, selected: selectActive[0] == true }"
+        @click="selectClassMakingStories(0)"
+      >
         Student achievements
       </div>
-      <div :class="{'tab-item': true, 'selected': selectActive[1]==true}"  @click="selectClassMakingStories(1)">
+      <div
+        :class="{ 'tab-item': true, selected: selectActive[1] == true }"
+        @click="selectClassMakingStories(1)"
+      >
         Startups and Entrepreneurs
       </div>
-      <div :class="{'tab-item': true, 'selected': selectActive[2]==true}"  @click="selectClassMakingStories(2)">
+      <div
+        :class="{ 'tab-item': true, selected: selectActive[2] == true }"
+        @click="selectClassMakingStories(2)"
+      >
         Prominent leaders
       </div>
-      <div :class="{'tab-item': true, 'selected': selectActive[3]==true}" @click="selectClassMakingStories(3)">
+      <div
+        :class="{ 'tab-item': true, selected: selectActive[3] == true }"
+        @click="selectClassMakingStories(3)"
+      >
         Scholars and Academicians
       </div>
     </div>
@@ -121,6 +136,21 @@
       </div>
     </template>
   </PageSection>
+  <BlackFooter>
+    <template #text>Are you an alumni?</template>
+    <template #buttons>
+      <OrangeButton
+        displayText="Share your thoughts"
+        type="filled"
+        customColor="#4F53FF"
+        :customStyle="{
+          minWidth: '15vw',
+          textAlign: 'center',
+          padding: '15px 0',
+        }"
+      />
+    </template>
+  </BlackFooter>
 </template>
 <script>
 import Header from "@/components/Reusable/Header";
@@ -132,6 +162,7 @@ import NewsSlider from "@/components/NewsSlider";
 import AchieversSlider from "@/components/AchieversSlider";
 import BackgroundWithTextTile from "@/components/Reusable/Buttons/BackgroundWithTextTile";
 import ImageGrid from "@/components/Reusable/ImageGrid.vue";
+import BlackFooter from "@/components/Reusable/BlackFooter.vue";
 
 export default {
   name: "HomePage",
@@ -145,12 +176,13 @@ export default {
     AchieversSlider,
     BackgroundWithTextTile,
     ImageGrid,
+    BlackFooter
   },
   data() {
     return {
       num: 0,
       selectActive: [true, false, false, false],
-      isActive: false
+      isActive: false,
     };
   },
   updated() {
@@ -223,6 +255,18 @@ export default {
   letter-spacing: 1px;
   margin-bottom: 40px;
   color: white;
+}
+
+.homeVector {
+  position: absolute;
+  top: 140vh;
+  left: 20vw;
+  z-index: -100;
+}
+
+.smallHomeVector {
+  top: 600vh;
+  left: 33vw;
 }
 
 #heroCTAButtons {
@@ -317,9 +361,6 @@ export default {
 
 .newsSliderContainer {
   width: 85vw;
-  border: 2px solid var(--orange);
-  box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.1);
-  /* height: 300px */
 }
 
 .achieversSliderContainer {

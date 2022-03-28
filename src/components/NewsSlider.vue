@@ -2,13 +2,15 @@
   <vueper-slides
     :breakpoints="breakpoints"
     class="no-shadow"
-    fade
     :touchable="false"
+    :visible-slides="4"
+    :slideRatio="1/2.4"
   >
     <vueper-slide
-      v-for="i in 4"
+    class="mySlide"
+      v-for="i in 8 "
       :key="i"
-      :style="'background-color: ' + ['white', 'white'][i % 2]"
+      style="background-color: white; margin-right: 4%"
     >
       <template v-slot:content>
         <NewsObject>
@@ -80,6 +82,34 @@ export default {
           'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
         image: require("@/assets/HomePage/4.png"),
       },
+      {
+        id: "slide-4",
+        title: 'Slide <b style="font-size: 1.3em;color: yellow">#4</b>',
+        content:
+          'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
+        image: require("@/assets/HomePage/4.png"),
+      },
+      {
+        id: "slide-4",
+        title: 'Slide <b style="font-size: 1.3em;color: yellow">#4</b>',
+        content:
+          'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
+        image: require("@/assets/HomePage/4.png"),
+      },
+      {
+        id: "slide-4",
+        title: 'Slide <b style="font-size: 1.3em;color: yellow">#4</b>',
+        content:
+          'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
+        image: require("@/assets/HomePage/4.png"),
+      },
+      {
+        id: "slide-4",
+        title: 'Slide <b style="font-size: 1.3em;color: yellow">#4</b>',
+        content:
+          'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
+        image: require("@/assets/HomePage/4.png"),
+      },
     ],
     colors: ["#abc", "346", "#1bd", "#9cf"],
   }),
@@ -93,22 +123,10 @@ export default {
   object-fit: cover;
 }
 
-.vueperslides__arrow {
-  color: var(--orange);
-}
-
-.vueperslides__bullets:not(.vueperslides__bullets--outside) {
-  color: var(--orange);
-  opacity: 0.75;
-}
-
-.vueperslides__bullet {
-  transform: scale(0.5);
-}
-
-.vueperslides__bullet--active {
-  opacity: 1;
-  transform: scale(1);
+.mySlide {
+  max-width: 18vw;
+   box-shadow: 0px 4px 10px 6px rgba(0, 0, 0, 0.1);
+   margin: 10px
 }
 
 @media screen and (max-width: 780px) {

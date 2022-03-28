@@ -46,7 +46,7 @@ import OpaquePageTitle from "../components/Reusable/OpaquePageTitle";
 import PageSection from "../components/Reusable/PageSection";
 import NewsletterTile from "../components/NewsletterTile";
 export default {
-  name: "Newsletters",
+  name: "NewslettersPage",
   components: {
     Header,
     OpaquePageTitle,

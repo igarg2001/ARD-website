@@ -20,14 +20,14 @@
   <PageSection>
     <template #heading>DISTINGUISHED ALUMNI AWARDS</template>
     <template #content>
-  <div id="contentText">
-    Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa Campus
-    for the year of 2020. The event was hosted by the honorable Chancellor - Mr.
-    Kumar Mangalam Birla and Vice Chancellor - Prof. Souvik Bhattacharyya. The
-    event was well received by various prominent personalities including the
-    list of Awardees.
-  </div>
-</template>
+        <div id="contentText">
+           Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa Campus
+          for the year of 2020. The event was hosted by the honorable Chancellor - Mr.
+          Kumar Mangalam Birla and Vice Chancellor - Prof. Souvik Bhattacharyya. The
+          event was well received by various prominent personalities including the
+          list of Awardees.
+         </div>
+        </template>
 </PageSection>
 <div id="buttonCont">
 <OrangeButton displayText="2020" type="filled" customBorder="#F16582" customColor="white" customBackground="#F16582"  />
@@ -41,12 +41,11 @@
  </div>
  <div id="galleryContainer">
    <div class="headingCont">
-       <div class="headingText whiteHeading">GALLERY</div>
-   <div class="headingUnderline"></div>
+       <div class="headingText whiteHeading">Event Snapshots</div>
    </div>
    <ImageGrid />
    <div id="loadMoreButton">
-    <OrangeButton displayText="Load More" type="filled" :flexibleWidth="true" />
+    <OrangeButton displayText="LOAD MORE" type="outline" :flexibleWidth="true" />
   </div>
    </div>
 
@@ -252,12 +251,12 @@ font-family: "Urby", sans-serif;
   padding: 15px 0;
 }
 .headingText {
-  font-family: "Maven Pro", sans-serif;
-  font-weight: 800;
-  color: #353535;
-  text-transform: uppercase;
-  font-size: 2.32vw;
-  padding-bottom: 20px;
+  font-family: "Urby", sans-serif;
+  font-weight: 700;
+  color: white;
+  /* text-transform: uppercase; */
+  font-size: 64px;
+  margin-bottom: 3%
 }
 .whiteHeading {
   color: white;
@@ -273,24 +272,17 @@ font-family: "Urby", sans-serif;
 }
 #galleryContainer {
   width: 100%;
-  background-color: var(--gray);
+  background-color: #4F53FF;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 20px 0;
-}
-.headingUnderline {
-  width: 100%;
-  max-width: 15vw;
-  height: 10px;
-  background-color: #ff9233;
-  margin-bottom: 80px;
+  padding: 3% 5%
 }
 
 #loadMoreButton {
-  width: 10%
+  width: 10%;
+  align-self: center
 }
 @media screen and (max-width: 768px) {
   #heroContainer {
