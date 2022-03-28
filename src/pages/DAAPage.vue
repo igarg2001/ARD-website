@@ -4,7 +4,7 @@
     <HeroSlider />
     <div id="heroTextContent">
       <div id="heroImpactText">
-        DISTINGUISHED ALUMNI <span class="orange">AWARDS</span>
+        Distinguished Alumni Awards
       </div>
       <div id="heroSubText">
         Every year, BITS Pilani feels proud to celebrate and felicitate its
@@ -12,32 +12,31 @@
         operations. Constituted in 2011.
       </div>
       <div id="heroCTAButtons">
-        <OrangeButton displayText="Eligibility criteria" type="outline" />
-        <OrangeButton displayText="Nominations for 2021" type="filled" />
+        <OrangeButton displayText="Eligibility criteria" type="filled" customColor="#4F53FF" />
+        <OrangeButton displayText="Nominations for 2021" type="filled" customColor="#F95A78"/>
       </div>
     </div>
   </div>
   <PageSection>
     <template #heading>DISTINGUISHED ALUMNI AWARDS</template>
     <template #content>
-      <div id="contentText">
-        Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa
-        Campus for the year of 2020. The event was hosted by the honorable
-        Chancellor - Mr. Kumar Mangalam Birla and Vice Chancellor - Prof. Souvik
-        Bhattacharyya. The event was well received by various prominent
-        personalities including the list of Awardees.
-      </div>
-    </template>
-  </PageSection>
-  <div id="buttonCont">
-    <OrangeButton displayText="2020" type="filled" />
-      <OrangeButton displayText="2019" type="outline" color/>
-       <OrangeButton displayText="2018" type="outline" color/>
-        <OrangeButton displayText="2017" type="outline" color/>
-         <OrangeButton displayText="2016" type="outline" color/>
- </div>
+  <div id="contentText">
+    Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa Campus
+    for the year of 2020. The event was hosted by the honorable Chancellor - Mr.
+    Kumar Mangalam Birla and Vice Chancellor - Prof. Souvik Bhattacharyya. The
+    event was well received by various prominent personalities including the
+    list of Awardees.
+  </div>
+</template>
+</PageSection>
+<div id="buttonCont">
+<OrangeButton displayText="2020" type="filled" customBorder="#F16582" customColor="white" customBackground="#F16582"  />
+<OrangeButton displayText="2019" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
+<OrangeButton displayText="2018" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
+<OrangeButton displayText="2017" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
+<OrangeButton displayText="2016" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
+</div>
  <div id="awardeesCarouselContainer">
-     <div class="headingText">LIST OF AWARDEES</div>
      <FourInAPageSlider :data="daaData" />
  </div>
  <div id="galleryContainer">
@@ -171,7 +170,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 99.2vw;
+  /* width: 99.2vw; */
   justify-content: center;
   align-items: center;
   position: relative;
@@ -197,17 +196,18 @@ export default {
 }
 
 #heroImpactText {
-  font-family: "Maven Pro", sans-serif;
-  font-size: 3.2vw;
+font-family: "Urby", sans-serif;
+  font-size: 128px;
   color: white;
   font-weight: 900;
-  white-space: nowrap;
   text-align: center;
   margin-bottom: 30px;
 }
 
 #heroSubText {
-  font-size: 22px;
+  font-family: "AmsiProNarw";
+  font-weight: 200;
+  font-size: 23px;
   letter-spacing: 1px;
   margin-bottom: 40px;
   color: white;
@@ -229,23 +229,20 @@ export default {
   margin-right: 60px;
 }
 #contentText {
-  width: 85%;
-  color: #08070a;
-
   /* text white shadow */
-
   text-shadow: 0px 4px 60px #ffffff;
-  font-family: "Baloo 2", sans-serif;
-  font-size: 21px;
-  text-align: center;
+  font-family: "AmsiProCond", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #3F4D8C;
 }
 #buttonCont {
-  width: 95%;
+  width: 85%;
+  margin-left: 7.5%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 2.5%;
+  justify-content: space-between
+
 }
 #buttonCont > div {
   width: 10%;

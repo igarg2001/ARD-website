@@ -1,13 +1,6 @@
 <template lang="">
-    <div id="heroContainer">
-        <Header id="header" :isOpaque="false" />
-        <div id="heroSection">
-            <img src="../assets/images/team_hero.png">
-            <div class="overlay">
-                <p>ALUMNI RELATIONS TEAM</p>
-            </div>
-        </div>
-    </div>
+ <Header id="header" />
+<OpaquePageTitle normal="Alumni Relations Cell" />
     <div id="pageSection">
         <PageSection>
             <template #heading>ALUMNI RELATIONS CELL</template>
@@ -42,6 +35,7 @@
 import Header from "../components/Reusable/Header.vue";
 import PageSection from "../components/Reusable/PageSection.vue";
 import FourInAPageSlider from "../components/Reusable/FourInAPageSlider.vue";
+import OpaquePageTitle from "../components/Reusable/OpaquePageTitle.vue";
 const teamData = [
   {
     id: 1,
@@ -143,18 +137,11 @@ export default {
     Header,
     PageSection,
     FourInAPageSlider,
+    OpaquePageTitle,
   },
 };
 </script>
 <style scoped>
-#heroContainer {
-  position: relative;
-  min-height: 25vw;
-}
-#header {
-  position: absolute;
-  top: 0;
-}
 #heroSection {
   position: absolute;
   top: 0;
@@ -208,7 +195,7 @@ export default {
     height: 100%;
   }
   #heroSection .overlay {
-    height: 100%
+    height: 100%;
   }
 
   #heroSection .overlay p {

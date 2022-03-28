@@ -102,18 +102,24 @@ export default {
 }
 
 ::v-global(.vueperslides__bullets) {
-  color: var(--orange);
+  color: #4F53FF;
   opacity: 0.75;
+}
+
+::v-global(.vueperslides__arrow) {
+   color: white;
+   background: #4F53FF;
 }
 
 .vueperslides__bullet {
   transform: scale(0.5);
   opacity: 0.75;
+  background: rgba(79, 83, 255, 0.34);
 }
 
 .vueperslides__bullet--active {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(2);
 }
 
 .vueperslide--active {

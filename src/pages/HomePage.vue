@@ -1,28 +1,31 @@
 <template>
   <div id="heroContainer">
-    <Header id="header" :isOpaque="false" />
+    <Header id="header" :isOpaque="true" />
     <HeroSlider />
     <div id="heroTextContent">
-      <div id="heroImpactText">
-        OUR GREATEST <span class="orange">STRENGTH</span>
-      </div>
-      <div id="heroSubText">
-        BITS Pilani’s alumni — entrepreneurs, researchers, policymakers, and
-        above all, leaders — have helped to shape the world we know today.
-      </div>
+      <div id="heroImpactText">Our Strength Comes From You</div>
+      <div id="heroSubText">Support us by joining our network</div>
       <div id="heroCTAButtons">
-        <OrangeButton displayText="View Merchandise" type="outline" />
-        <OrangeButton displayText="Join AlmaConnect" type="filled" />
+        <OrangeButton displayText="View Merchandise" customColor="#4F53FF" />
+        <OrangeButton displayText="Join AlmaConnect" customColor="#F95A78" />
       </div>
     </div>
   </div>
   <PageSection>
-    <template #heading>Impact Numbers</template>
+    <template #heading>Growing Impact</template>
     <template #content>
+      <div class="impactNumberDescription">
+        Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa
+        Campus for the year of 2020. The event was hosted by the honorable
+        Chancellor - Mr. Kumar Mangalam Birla and Vice Chancellor - Prof. Souvik
+        Bhattacharyya. The event was well received by various prominent
+        personalities including the list of Awardees.
+      </div>
       <div class="imapctNumberCapsulesContainer">
         <NumberCapsule :number="num + '+'" text="Entrepreneurs" />
         <NumberCapsule number="3500+" text="Managers" />
         <NumberCapsule number="450+" text="Academicians" />
+        <NumberCapsule number="3500+" text="Managers" />
       </div>
     </template>
   </PageSection>
@@ -35,7 +38,7 @@
     </template>
   </PageSection>
   <PageSection>
-    <template #heading>BITSians in News</template>
+    <template #heading>Hall Of Fame</template>
     <template #content>
       <div class="achieversSliderContainer">
         <AchieversSlider />
@@ -44,18 +47,33 @@
   </PageSection>
   <div id="galleryContainer">
     <div class="headingCont">
-      <div class="headingText whiteHeading">NEWSDESK</div>
-      <div class="headingUnderline"></div>
+      <div class="headingText whiteHeading">Making stories</div>
+    </div>
+    <div class="tabs">
+      <div :class="{'tab-item': true, 'selected': selectActive[0]==true}" @click="selectClassMakingStories(0)">
+        Student achievements
+      </div>
+      <div :class="{'tab-item': true, 'selected': selectActive[1]==true}"  @click="selectClassMakingStories(1)">
+        Startups and Entrepreneurs
+      </div>
+      <div :class="{'tab-item': true, 'selected': selectActive[2]==true}"  @click="selectClassMakingStories(2)">
+        Prominent leaders
+      </div>
+      <div :class="{'tab-item': true, 'selected': selectActive[3]==true}" @click="selectClassMakingStories(3)">
+        Scholars and Academicians
+      </div>
     </div>
     <ImageGrid />
     <div id="loadMoreButton">
       <OrangeButton
-        displayText="Load More"
-        type="filled"
+        displayText="LOAD MORE"
+        type="outline"
         :flexibleWidth="true"
+        customBackground="transparent"
       />
     </div>
   </div>
+
   <PageSection>
     <template #heading>Quick Links</template>
     <template #content>
@@ -104,7 +122,6 @@
     </template>
   </PageSection>
 </template>
-
 <script>
 import Header from "@/components/Reusable/Header";
 import HeroSlider from "@/components/HeroSlider";
@@ -132,13 +149,27 @@ export default {
   data() {
     return {
       num: 0,
+      selectActive: [true, false, false, false],
+      isActive: false
     };
+  },
+  updated() {
+    console.log(this.selectActive);
   },
   async created() {
     // GET request using fetch with async/await
     const response = await fetch("https://api.npms.io/v2/search?q=vue");
     const data = await response.json();
     this.num = data.total;
+  },
+  methods: {
+    selectClassMakingStories: function (i) {
+      console.log(this);
+      this.selectActive.forEach((part, index, theArray) => {
+        theArray[index] = false;
+      });
+      this.selectActive[i] = true;
+    },
   },
 };
 </script>
@@ -176,17 +207,19 @@ export default {
 }
 
 #heroImpactText {
-  font-family: "Maven Pro", sans-serif;
-  font-size: 60px;
+  font-family: "Urby", sans-serif;
+  font-size: 128px;
   color: white;
   font-weight: 900;
-  white-space: nowrap;
   text-align: center;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 #heroSubText {
-  font-size: 24px;
+  font-family: "AmsiProNarw";
+  font-weight: 200;
+  font-size: 40px;
   letter-spacing: 1px;
   margin-bottom: 40px;
   color: white;
@@ -198,13 +231,14 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-
+.headingCont {
+  margin-top: 2%;
+}
 .headingText {
-  font-family: "Maven Pro", sans-serif;
-  font-weight: 800;
+  font-family: "Urby", sans-serif;
+  font-weight: 700;
   color: #353535;
-  text-transform: uppercase;
-  font-size: 2.32vw;
+  font-size: 64px;
   padding-bottom: 20px;
 }
 .whiteHeading {
@@ -213,7 +247,7 @@ export default {
 
 #galleryContainer {
   width: 100%;
-  background-color: var(--gray);
+  background: linear-gradient(270deg, #001ea0 0%, #2c45ae 100%);
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -221,6 +255,26 @@ export default {
   align-items: center;
   padding: 20px 0;
 }
+
+#galleryContainer .tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 60%;
+  margin-bottom: 2%;
+}
+
+#galleryContainer .tabs .tab-item {
+  color: white;
+  font-family: "AmsiProNarw", sans-serif;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+#galleryContainer .tabs .selected {
+  font-weight: 600;
+}
+
 .headingUnderline {
   width: 100%;
   max-width: 15vw;
@@ -246,6 +300,7 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 
 .imapctNumberCapsulesContainer > div {
@@ -256,6 +311,10 @@ export default {
   margin-right: 0px;
 }
 
+.imapctNumberCapsulesContainer > div:first-child {
+  margin-left: 4px;
+}
+
 .newsSliderContainer {
   width: 85vw;
   border: 2px solid var(--orange);
@@ -264,7 +323,7 @@ export default {
 }
 
 .achieversSliderContainer {
-  width: 95vw;
+  width: 100%;
 }
 
 .quickLinksContainer {
@@ -278,6 +337,14 @@ export default {
 
 .quickLinksContainer > div {
   margin: 25px 25px;
+}
+
+.impactNumberDescription {
+  color: #3f4d8c;
+  font-family: "AmsiProCond", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  margin-bottom: 4%;
 }
 
 @media screen and (max-width: 780px) {

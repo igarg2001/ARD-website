@@ -1,9 +1,16 @@
 <template>
   <Header :isOpaque="true" />
-  <OpaquePageTitle title="Echo Newsletters" />
-  <PageSection style="margin-bottom: 120px;">
-    <template #heading>Recently Released</template>
+  <OpaquePageTitle normal="Echo Newsletters" />
+  <PageSection style="margin-bottom: 120px">
+    <template #heading>Our daily-weekly magazine</template>
     <template #content>
+      <div id="contentText">
+        Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa
+        Campus for the year of 2020. The event was hosted by the honorable
+        Chancellor - Mr. Kumar Mangalam Birla and Vice Chancellor - Prof. Souvik
+        Bhattacharyya. The event was well received by various prominent
+        personalities including the list of Awardees.
+      </div>
       <div class="recents">
         <NewsletterTile
           v-for="newsletter in newsletters"
@@ -20,8 +27,14 @@
   <PageSection>
     <template #heading>Past Releases</template>
     <template #content>
-      <a v-for="pastNewsletter in pastNewsletters" href="https://www.google.com" :key="pastNewsletter.id" class="pastRelease">
-        <strong>{{pastNewsletter.title}}</strong> <br />Volume {{pastNewsletter.volume}} | Issue {{pastNewsletter.issue}}
+      <a
+        v-for="pastNewsletter in pastNewsletters"
+        href="https://www.google.com"
+        :key="pastNewsletter.id"
+        class="pastRelease"
+      >
+        <strong>{{ pastNewsletter.title }}</strong> <br />Volume
+        {{ pastNewsletter.volume }} | Issue {{ pastNewsletter.issue }}
       </a>
     </template>
   </PageSection>
@@ -148,6 +161,15 @@ export default {
 </script>
 
 <style scoped>
+#contentText {
+  /* text white shadow */
+  text-shadow: 0px 4px 60px #ffffff;
+  font-family: "AmsiProCond", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #3f4d8c;
+  margin-bottom: 2%;
+}
 .recents {
   display: flex;
   flex-direction: row;
@@ -158,7 +180,7 @@ export default {
 }
 
 .recents > div {
-  margin: 0px 4%;
+  margin: 0px 8%;
   margin-bottom: 80px;
 }
 
@@ -168,7 +190,7 @@ export default {
   margin-bottom: 40px;
   text-align: center;
   line-height: 0.96;
-  color: #21244F;
+  color: #21244f;
 }
 
 .pastRelease:hover {

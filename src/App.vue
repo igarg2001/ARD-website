@@ -12,6 +12,49 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: "Urby";
+  src: url('~@/fonts/Urby Black.otf');
+  font-style: normal;
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Urby";
+  src: url('~@/fonts/Urby Bold.otf');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'AmsiProNarw';
+  src: url('~@/fonts/AmsiProNarw-Regular.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'AmsiProNarw';
+  src: url('~@/fonts/AmsiProNarw-Light.otf');
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'AmsiProNarw';
+  src: url('~@/fonts/AmsiProNarw-Bold.otf');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "AmsiProCond";
+  src: url('~@/fonts/AmsiProCond-Light.otf');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "AmsiPro";
+  src: url('~@/fonts/AmsiPro-Black.otf');
+  font-style: normal;
+  font-weight: 900;
+}
 #app {
   font-family: "Baloo 2", sans-serif;
   -webkit-font-smoothing: antialiased;

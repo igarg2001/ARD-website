@@ -4,7 +4,7 @@
       <div class="pageSectionHeadingText">
         <slot name="heading"></slot>
       </div>
-      <div class="headingUnderline"></div>
+      <!-- <div class="headingUnderline"></div> -->
     </div>
     <slot name="content"></slot>
     <!-- <slot></slot> -->
@@ -28,23 +28,23 @@ export default {
   margin-bottom: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   overflow: hidden;
+  width: 85%;
+  margin-left: 7.5%;
 }
 
 .pageSectionHeadingContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
 }
 
 .pageSectionHeadingText {
-  font-family: "Maven Pro", sans-serif;
-  font-weight: 800;
-  color: #353535;
-  text-transform: uppercase;
-  font-size: 2.32vw;
+  font-family: "Urby", sans-serif;
+  font-weight: 700;
+  color: #1D74B7;
+  /* text-transform: uppercase; */
+  font-size: 3vw;
   padding-bottom: 20px;
 }
 

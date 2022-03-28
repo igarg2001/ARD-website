@@ -6,18 +6,17 @@
   :touchable="false"
   slide-multiple
   :gap="2"
-  :slide-ratio="1 / 2.5"
   >
   <vueper-slide v-for="i in data" :key="i">
       <template v-slot:content>
           <div id="slideWrapper">
               <img :src="getPic(i.image)">
               <div id="title">{{i.title}}</div>
-              <div id="smallContent">{{i.smallContent}}</div>
+              <!-- <div id="smallContent">{{i.smallContent}}</div>
               <div id="icons">
                 <img :src="TelephoneIcon" alt="telephone" />
                 <img :src="EnvelopeIcon" alt="envelope" />
-              </div>
+              </div> -->
           </div>
       </template>
   </vueper-slide>
@@ -58,39 +57,49 @@ export default {
 </script>
 <style scoped>
 #wrapper {
-  width: 94%;
-  margin-left: 3%;
+  width: 95%;
+  /* margin-left: 3%; */
 }
 #slideWrapper {
   background: #ffffff;
   /* Shadow0 */
 
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
-  margin-top: 5%;
-  height: 90%;
+  margin-top: 5%; */
+  height: 75%;
+  margin-top: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 7.5% 5%;
   width: 95%;
   margin-left: 2.5%;
+  cursor: pointer;
+  transition: transform 0.2s;
+  transform: none;
   /* position: relative; */
 }
 
+#slideWrapper:hover {
+  transform: scale(1.1);
+}
+
 #slideWrapper #title {
-  font-family: "Poppins", sans-serif;
+  font-family: "AmsiPro", sans-serif;
   font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
+  font-weight: 900;
+  font-size: 21px;
   line-height: 36px;
   margin-top: 4%;
   /* identical to box height */
-  color: #211d70;
+  color: #1D74B7;
+
   text-align: center;
 }
 #slideWrapper img {
-  height: 40%;
+  height: 100%;
   width: auto;
 }
 #slideWrapper #smallContent {

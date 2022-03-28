@@ -1,7 +1,7 @@
 <template>
   <div
     v-bind:class="[
-      type === 'filled' ? 'filled' : null,
+      type === 'filled' ? 'filled' : 'filled',
       type === 'outline' ? 'outline' : null,
       fontColor === 'black' ? 'black' : null,
       color ? 'color' : null,
@@ -9,6 +9,11 @@
       flexibleHeight ? 'height' : null,
       'button',
     ]"
+    v-bind:style="{
+      color: customColor,
+      background: type === 'filled' ? customBackground : (type === 'outline' ? 'transparent' : 'white'),
+      borderColor: customBorder
+    }"
   >
     {{ displayText }}
   </div>
@@ -24,31 +29,36 @@ export default {
     fontColor: String,
     flexibleWidth: Boolean,
     flexibleHeight: Boolean,
+    customColor: String,
+    customBackground: String,
+    customBorder: String
   },
 };
 </script>
 
 <style scoped>
 .button {
-  font-family: "Maven Pro", sans-serif;
+  font-family: "AmsiPro", sans-serif;
   color: white;
   padding: 10px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 .filled {
-  background-color: var(--orange);
-  border: 3px solid var(--orange);
+  background-color: #ffffff;
+  border: none;
 }
 
 .outline {
-  border: 3px solid var(--orange);
   transition: all 0.2s ease;
+  border-width: 3px;
+  border-style: solid;
+  border-color: white;
 }
 
 .outline:hover {
-  background-color: var(--orange);
+  animation: scaleOnHover 0.5s ease forwards;
 }
 .color {
   color: var(--orange);
@@ -63,5 +73,20 @@ export default {
 .height {
   height: 100%;
   text-align: center;
+}
+
+
+@keyframes scaleOnHover {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 </style>

@@ -10,8 +10,8 @@
       duration="6000"
       @autoplay-pause="internalAutoPlaying = false"
       @autoplay-resume="internalAutoPlaying = true"
-      :parallax= 1
-      :parallax-fixed-content= false
+      :parallax="1"
+      :parallax-fixed-content="false"
       :arrows="false"
     >
       <vueper-slide
@@ -83,15 +83,20 @@ export default {
   width: 99.2vw;
   height: 100vh;
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
 }
 
 #overlay {
   width: 100%;
   height: 100%;
-  background-color: #08070a;
-  opacity: 0.75;
+  background: linear-gradient(
+    52.23deg,
+    #1d74b7 -18.6%,
+    #4f53ff 30.16%,
+    #f95a78 103.24%
+  );
+  opacity: 0.6;
   z-index: 500;
   position: absolute;
 }
@@ -100,7 +105,7 @@ export default {
   height: 100vh;
 }
 
-.vueperslides__bullets{
+.vueperslides__bullets {
   z-index: 501;
 }
 </style>

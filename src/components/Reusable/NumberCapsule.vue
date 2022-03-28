@@ -17,28 +17,31 @@ export default {
 
 <style scoped>
 .outline {
-  border: 3px solid var(--orange);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px 2px #888888;
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  min-width: 420px;
+  min-width: 345px;
 }
 
 .number {
-  font-family: "Maven Pro", sans-serif;
+  font-family: "AmsiPro", sans-serif;
   font-size: 1.92vw;
-  font-weight: 700;
-  color: var(--orange);
+  font-weight: 900;
+  color: #F16582;
   text-align: center;
   margin-bottom: 5px;
 }
 
 .text {
+  font-family: "AmsiProNarw", sans-serif;
   font-size: 0.88vw;
-  font-weight: 700;
+  font-weight: 600;
   color: #21244f;
 }
 
@@ -46,7 +49,7 @@ export default {
   .outline {
     min-width: 0px;
     width: 85vw;
-    padding: 10px
+    padding: 10px;
   }
 
   .number {

@@ -1,5 +1,5 @@
 <template>
-  <div id="header" :class="isOpaque && 'headerOpaque'">
+  <div id="header" class="headerOpaque">
     <div id="logo">
       <img src="../../assets/bitsLogo.svg" alt="BITS Pilani Logo" />
     </div>
@@ -9,7 +9,9 @@
         <a target="_blank" href="https://bitsaa.org">Community</a>
       </div>
       <div class="navElement">Events &#38; Reunions</div>
-      <div class="navElement">Merchandise</div>
+      <div class="navElement">
+        <router-link to="/daa">Distinguished Alumni</router-link>
+      </div>
       <div class="navElement">
         <router-link to="/team">Alumni relations team</router-link>
       </div>
@@ -24,22 +26,23 @@
         </div>
       </div>
       <router-link to="/givingback" class="gb">
-        <OrangeButton
+        <!-- <OrangeButton
           displayText="Giving Back"
           type="outline"
           style="margin-left: 40px"
-        />
+        /> -->
+        <div class="givingBackButton">Giving Back</div>
       </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import OrangeButton from "./Buttons/OrangeButton";
+// import OrangeButton from "./Buttons/OrangeButton";
 export default {
   name: "Header",
   components: {
-    OrangeButton,
+    // OrangeButton,
   },
   props: {
     isOpaque: Boolean,
@@ -49,7 +52,7 @@ export default {
 
 <style scoped>
 .headerOpaque {
-  background-color: #050505;
+  background-color: #ffffff;
 }
 
 #header {
@@ -59,9 +62,9 @@ export default {
   align-items: center;
   padding: 15px 3.3333vw;
   user-select: none;
-  font-weight: 400;
-  font-family: "Maven Pro", sans-serif;
-  width: 99.2vw;
+  font-weight: 600;
+  font-family: "AmsiProNarw", sans-serif;
+  width: calc(100vw - 15px);
   color: white;
 }
 
@@ -85,21 +88,34 @@ export default {
   border-bottom: 0px solid #f1f1f1;
   transition: all 0.13s ease;
   padding-bottom: 1px;
-  color: white;
+  color: #1d74b7;
 }
 
 .navElement:hover {
   padding-bottom: 0px;
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #1d74b7;
 }
 
 .navElement a {
-  color: white;
+  color: #1d74b7;
   text-decoration: none;
 }
 
 .navElement a.router-link-exact-active {
-  font-weight: 800;
+  color: #f95a78;
+}
+
+.givingBackButton {
+  background-color: #4f53ff;
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0px 0px 4px 2px rgba(245, 117, 21, 0.25);
+  border-radius: 2px;
+  transition: background-color 0.4s ease;
+}
+
+.givingBackButton:hover {
+  background-color: #f95a78;
 }
 
 .dropdownContent {
