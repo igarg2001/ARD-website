@@ -19,7 +19,7 @@ export default {
 .outline {
   border: none;
   border-radius: 4px;
-  box-shadow: 0px 0px 4px 2px #888888;
+  box-shadow: 0px 0px 25px 4px rgba(0,0,10, 0.15);
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
@@ -29,13 +29,19 @@ export default {
   min-width: 345px;
   z-index: 5;
   background: white;
+  color: #F16582;
+  transition: 0.3s ease-in;
+}
+
+.outline:hover {
+  background: #F16582;
+  color: white;
 }
 
 .number {
   font-family: "AmsiPro", sans-serif;
   font-size: 1.92vw;
   font-weight: 900;
-  color: #F16582;
   text-align: center;
   margin-bottom: 5px;
 }
@@ -45,6 +51,11 @@ export default {
   font-size: 0.88vw;
   font-weight: 600;
   color: #21244f;
+   transition: 0.3s ease-in;
+}
+
+.outline:hover .text {
+  color: white;
 }
 
 @media screen and (max-width: 780px) {

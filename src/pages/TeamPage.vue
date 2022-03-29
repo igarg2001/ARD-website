@@ -29,10 +29,10 @@
 </template>
         </PageSection>
         <div id="buttonCont">
-<OrangeButton displayText="Pilani" type="filled" customBorder="#F16582" customColor="white" customBackground="#F16582"  />
-<OrangeButton displayText="Goa" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
-<OrangeButton displayText="Hyderabad" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
-<OrangeButton displayText="Dubai" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
+<OrangeButton displayText="Pilani" type="filled" customBorder="#F16582" customColor="white" customBackground="#F16582" :customStyle="{fontSize: '22px'}"  />
+<OrangeButton displayText="Goa" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582" :customStyle="{fontSize: '22px'}"/>
+<OrangeButton displayText="Hyderabad" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582" :customStyle="{fontSize: '22px'}"/>
+<OrangeButton displayText="Dubai" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582" :customStyle="{fontSize: '22px'}"/>
 </div>
           <div class="carouselContainer">
            <FourInAPageSlider :data="teamData"/>
@@ -175,7 +175,7 @@ export default {
   margin-top: -8%
 }
 #buttonCont {
-  width: 85%;
+  width: 55%;
   margin-left: 7.5%;
   display: flex;
   flex-direction: row;
@@ -185,7 +185,7 @@ export default {
 
 }
 #buttonCont > div {
-  width: 10%;
+  width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;

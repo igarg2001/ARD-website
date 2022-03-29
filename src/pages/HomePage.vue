@@ -305,7 +305,7 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   width: 60%;
-  margin-bottom: 2%;
+  margin-bottom: 3%;
 }
 
 #galleryContainer .tabs .tab-item {

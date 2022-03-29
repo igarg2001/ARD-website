@@ -3,42 +3,42 @@
         <div class="column">
             <div class="element">
                 <img src="../../assets/images/DAAGallery/test.png">
-                <div class="overlay">CAPTIONS</div>
+                <!-- <div class="overlay">CAPTIONS</div> -->
             </div>
             <div class="element">
                 <img src="../../assets/images/DAAGallery/test.png">
-                 <div class="overlay">CAPTIONS</div>
+                 <!-- <div class="overlay">CAPTIONS</div> -->
 
             </div>
         </div>
         <div class="column">
             <div class="element">
                 <img src="../../assets/images/DAAGallery/test.png">
- <div class="overlay">CAPTIONS</div>
+ <!-- <div class="overlay">CAPTIONS</div> -->
             </div>
             <div class="element">
                 <img src="../../assets/images/DAAGallery/test.png">
-                 <div class="overlay">CAPTIONS</div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="element">
-                <img src="../../assets/images/DAAGallery/test.png">
-                 <div class="overlay">CAPTIONS</div>
-            </div>
-            <div class="element">
-                <img src="../../assets/images/DAAGallery/test.png">
-                 <div class="overlay">CAPTIONS</div>
+                 <!-- <div class="overlay">CAPTIONS</div> -->
             </div>
         </div>
         <div class="column">
             <div class="element">
                 <img src="../../assets/images/DAAGallery/test.png">
-                 <div class="overlay">CAPTIONS</div>
+                 <!-- <div class="overlay">CAPTIONS</div> -->
             </div>
             <div class="element">
                 <img src="../../assets/images/DAAGallery/test.png">
-                 <div class="overlay">CAPTIONS</div>
+                 <!-- <div class="overlay">CAPTIONS</div> -->
+            </div>
+        </div>
+        <div class="column">
+            <div class="element">
+                <img src="../../assets/images/DAAGallery/test.png">
+                 <!-- <div class="overlay">CAPTIONS</div> -->
+            </div>
+            <div class="element">
+                <img src="../../assets/images/DAAGallery/test.png">
+                 <!-- <div class="overlay">CAPTIONS</div> -->
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@ export default {
 
     }
     .element {
-        width: 40%;
+        width: 48%;
         position: relative;
     }
     .element img {

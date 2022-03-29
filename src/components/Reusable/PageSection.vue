@@ -46,7 +46,11 @@ export default {
   /* text-transform: uppercase; */
   font-size: 3vw;
   padding-bottom: 20px;
+  /* border: 1px solid #4f53ff */
+  --webkit-text-stroke-width: 1px;
+  --webkit-text-stroke-color: #4f53ff
 }
+
 
 .headingUnderline {
   width: 100%;
