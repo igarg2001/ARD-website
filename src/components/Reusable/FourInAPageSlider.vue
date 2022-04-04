@@ -1,6 +1,6 @@
 <template lang="">
   <div id="wrapper">
-      <vueper-slides
+  <vueper-slides
   class="no-shadow"
   :visible-slides="4"
   :touchable="false"
@@ -9,18 +9,20 @@
   >
   <vueper-slide v-for="i in data" :key="i">
       <template v-slot:content>
-          <div id="slideWrapper">
+          <div id="slideWrapper" @click="emitter(i)">
               <img :src="getPic(i.image)">
               <div id="title">{{i.title}}</div>
-              <!-- <div id="smallContent">{{i.smallContent}}</div>
-              <div id="icons">
-                <img :src="TelephoneIcon" alt="telephone" />
-                <img :src="EnvelopeIcon" alt="envelope" />
-              </div> -->
           </div>
       </template>
   </vueper-slide>
 </vueper-slides>
+<!-- <div class="modal" v-if="isOpen">
+  <div>
+    <h2>Heading</h2>
+    <p>Some filter text</p>
+    <button @click="isOpen = false">Close</button>
+  </div>
+</div> -->
   </div>
 </template>
 <script>
@@ -28,18 +30,19 @@ import { VueperSlides, VueperSlide } from "vueperslides";
 import TelephoneIcon from "@/assets/svg/telephone-fill.svg";
 import EnvelopeIcon from "@/assets/svg/envelope-fill.svg";
 export default {
-  created() {
-    // this.myData.map(i => console.log(typeof(i.image)))
-  },
   name: "FourInAPageSlider",
+  emits: ["clicked"],
   components: {
     VueperSlides,
     VueperSlide,
   },
-  props: ["data"],
+  props: {
+    data: Object,
+  },
   data() {
     return {
       myData: this.data,
+      sample: 5,
     };
   },
   setup() {
@@ -47,17 +50,24 @@ export default {
       TelephoneIcon,
       EnvelopeIcon,
     };
-  },
-  methods: {
-    getPic: (url) => {
-      return require("@/assets/images/TeamImages/" + url + "");
     },
+    methods: {
+    getPic(url) {
+      return require("@/assets/images/" + url + "");
+    },
+    emitter(i) {
+      this.$emit("clicked", {
+        isOpen: true,
+        index: i
+      });
+    }
   },
 };
 </script>
 <style scoped>
 #wrapper {
   width: 95%;
+  position: relative;
   /* margin-left: 3%; */
 }
 #slideWrapper {
@@ -67,7 +77,7 @@ export default {
   /* box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
   margin-top: 5%; */
-  height: 75%;
+  height: 85%;
   margin-top: 20%;
   display: flex;
   flex-direction: column;
@@ -94,13 +104,14 @@ export default {
   line-height: 36px;
   margin-top: 4%;
   /* identical to box height */
-  color: #1D74B7;
+  color: #1d74b7;
 
   text-align: center;
 }
 #slideWrapper img {
-  height: 100%;
+  height: 80%;
   width: auto;
+  max-width: 100%
 }
 #slideWrapper #smallContent {
   font-family: "Poppins", sans-serif;
@@ -126,13 +137,32 @@ export default {
   height: 25px;
 }
 
+/* .modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal > div {
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+} */
+
 @media screen and (max-width: 768px) {
   #wrapper {
-    margin-top: -10vh
+    margin-top: -10vh;
   }
   #slideWrapper {
     width: 90%;
-    margin-left: 5%
+    margin-left: 5%;
   }
 }
 </style>

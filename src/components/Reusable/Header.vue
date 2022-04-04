@@ -64,7 +64,7 @@ export default {
   user-select: none;
   font-weight: 600;
   font-family: "AmsiProNarw", sans-serif;
-  width: calc(100vw - 15px);
+  width: calc(100vw);
   color: white;
 }
 

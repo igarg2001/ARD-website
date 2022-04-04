@@ -11,10 +11,17 @@
     ]"
     v-bind:style="{
       color: customColor,
-      background: type === 'filled' ? customBackground : (type === 'outline' ? 'transparent' : 'white'),
+      background:
+        type === 'filled'
+          ? customBackground
+          : type === 'outline'
+          ? 'transparent'
+          : 'white',
       borderColor: customBorder,
-      ...customStyle
+      ...customStyle,
     }"
+    v-wave
+    @click="createRipple"
   >
     {{ displayText }}
   </div>
@@ -33,7 +40,12 @@ export default {
     customColor: String,
     customBackground: String,
     customBorder: String,
-    customStyle: Object
+    customStyle: Object,
+  },
+  methods: {
+    createRipple: (event) => {
+      console.log(event);
+    },
   },
 };
 </script>
@@ -45,11 +57,14 @@ export default {
   padding: 10px;
   cursor: pointer;
   font-weight: 900;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: background 400ms;
 }
 
 .filled {
-  background-color: #ffffff;
   border: none;
+  background-color: white;
 }
 
 .outline {
@@ -77,7 +92,6 @@ export default {
   text-align: center;
 }
 
-
 @keyframes scaleOnHover {
   0% {
     transform: scale(1);
@@ -89,6 +103,13 @@ export default {
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
 }
 </style>

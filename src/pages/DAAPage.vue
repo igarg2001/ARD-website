@@ -17,6 +17,24 @@
       </div>
     </div>
   </div>
+   <vue-final-modal v-model="isOpen" content-class="internal__wrapper" classes="modal__container">
+      <div class="modal__image">
+        <img :src="getPic(daaData[indexToBeAccessed].image)" :alt="daaData[indexToBeAccessed].title"/>
+      </div>
+      <div class="modal__details">
+        <div class="title">{{daaData[indexToBeAccessed].title}}</div>
+        <div class="desc">{{daaData[indexToBeAccessed].smallContent}}</div>
+        <div class="socialIcons">
+          <img src="@/assets/svg/FB.svg" alt="facebook"/>
+          <img src="@/assets/svg/IG.svg" alt="instagram"/>
+          <img src="@/assets/svg/Linkedin.svg" alt="linkedin"/>
+        </div>
+        <div class="closeModalIcon" @click="closeModal">
+            <img src="@/assets/svg/CloseModal.svg" />
+        </div>
+      </div>
+    
+  </vue-final-modal>
   <PageSection>
     <template #heading>DISTINGUISHED ALUMNI AWARDS</template>
     <template #content>
@@ -37,7 +55,7 @@
 <OrangeButton displayText="2016" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582"/>
 </div>
  <div id="awardeesCarouselContainer">
-     <FourInAPageSlider :data="daaData" />
+     <FourInAPageSlider :data="daaData" @clicked="updateIsOpen"/>
  </div>
  <div id="galleryContainer">
    <div class="headingCont">
@@ -56,97 +74,10 @@ import HeroSlider from "../components/HeroSlider";
 import OrangeButton from "../components/Reusable/Buttons/OrangeButton";
 import PageSection from "../components/Reusable/PageSection";
 import ImageGrid from '../components/Reusable/ImageGrid';
-import FourInAPageSlider from "../components/Reusable/FourInAPageSlider"
-const daaData = [
-  {
-    id: 1,
-    title: "Prof. Arya Kumar",
-    smallContent:
-      "Prof Arya Kumar is a professor in the Department of Economics and Finance, BITS Pilani. He is the Dean Alumni Relations at BITS Pilani. Prof Arya has a diverse experience of more than 40 years in the educational institutions, research organisations, Banks and Financial Institutions.",
-    fullContent: "All info about John Doe",
-    image: "Prof Arya Kumar.jpg",
-  },
-  {
-    id: 2,
-    title: "Prof. Rajeev Sakhuja",
-    smallContent:
-      "Prof. Rajeev is the Associate Prof in the Department of Chemistry. He is also the Associate Dean of BITS Pilani, Pilani campus. He joined the institute in 2012 as an Assistant Professor and in 2018, he was promoted to the position of Associate Professor. ",
-    fullContent: "All info about John Doe",
-    image: "Prof. Rajeev.jpg",
-  },
-  {
-    id: 3,
-    title: "Prof. Veeky Baths",
-    smallContent:
-      "Prof. Veeky is the Associate Prof in the Department of Biological Sciences, BITS Pilani, K.K. Birla Goa Campus. He is also the Associate Dean Alumni Relations of BITS Pilani, K.K. Birla Goa Campus. With over 15 years’ experience in teaching and research, Prof. Veeky has published various research articles in reputed journals and conferences.",
-    fullContent: "All info about John Doe",
-    image: "Prof Veeky.jpg",
-  },
-  {
-    id: 4,
-    title: "Prof. Meenakshi Viswanathan",
-    smallContent:
-      "Prof. Meenakshi is the Associate Prof in the Department of Physics at BITS Pilani, Hyderabad campus. She joined the institute in 2009 as an Assistant Professor. She is also the Associate Dean of BITS Pilani, Hyderabad campus.",
-    fullContent: "All info about John Doe",
-    image: "Prof Meenakshi.jpg",
-  },
-  {
-    id: 5,
-    title: "Prof. Trupti Gokhale",
-    smallContent:
-      "Prof. Trupti is an Associate Prof. in the Department of Biotechnology at BITS Pilani, Dubai campus. She is also the Associate Dean Alumni Relations for BITS Pilani, Dubai campus. ",
-    fullContent: "All info about John Doe",
-    image: "Prof Trupti.jpg",
-  },
-  {
-    id: 6,
-    title: "Sachin Arya",
-    smallContent:
-      "Sachin is the Head, Business Technology Incubator at PIEDS (Pilani Innovation & Entrepreneurship Development Society), BITS Pilani. He is also the Head of the Alumni Relations at BITS Pilani.",
-    fullContent: "All info about John Doe",
-    image: "Sachin.jpg",
-  },
-  {
-    id: 7,
-    title: "Raj Kumar Sharma",
-    smallContent:
-      "Gerard George is Dean and Lee Kong Chian Chair Professor of Innovation and Entrepreneurship at the Lee Kong Chian School of Business at Singapore Management University. Previously, he was Deputy Dean",
-    fullContent: "All info about John Doe",
-    image: "Raj.jpg",
-  },
-  {
-    id: 8,
-    title: "Saurabh Suman",
-    smallContent:
-      "Saurabh Suman is the Manager- Communications at BITS Pilani. He joined the institute in 2019.",
-    fullContent: "All info about John Doe",
-    image: "Saurabh Suman.jpg",
-  },
-  {
-    id: 9,
-    title: "Geetika",
-    smallContent:
-      "Geetika is the content writer at BITS Pilani. She joined the institute in June 2020.",
-    fullContent: "All info about John Doe",
-    image: "Geetika.jpg",
-  },
-  {
-    id: 10,
-    title: "Ramesh Saini",
-    smallContent:
-      "Gerard George is Dean and Lee Kong Chian Chair Professor of Innovation and Entrepreneurship at the Lee Kong Chian School of Business at Singapore Management University. Previously, he was Deputy Dean",
-    fullContent: "All info about John Doe",
-    image: "Ramesh.jpg",
-  },
-  {
-    id: 11,
-    title: "Santosh Kumar Saini",
-    smallContent:
-      "Gerard George is Dean and Lee Kong Chian Chair Professor of Innovation and Entrepreneurship at the Lee Kong Chian School of Business at Singapore Management University. Previously, he was Deputy Dean",
-    fullContent: "All info about John Doe",
-    image: "teamTest.png",
-  },
-];
+import FourInAPageSlider from "../components/Reusable/FourInAPageSlider";
+import {ref} from 'vue';
+import {daaData} from "@/data/daaData"
+
 export default {
   name: "DAAPage",
   components: {
@@ -161,7 +92,41 @@ export default {
     return {
       daaData
     }
-  }
+  },
+   setup() {
+    const isOpen = ref(false);
+    const indexToBeAccessed = ref(0);
+    return {
+      isOpen,
+      indexToBeAccessed
+    }
+  },
+  methods: {
+      updateIsOpen(v) {
+      // console.log(" Update is open")
+      this.isOpen = v.isOpen;
+
+      const id = v.index.id;
+      console.log(id);
+      const condition = (element) => element.id===id;
+      const index = daaData.findIndex(condition);
+      console.log(this.indexToBeAccessed)
+      this.indexToBeAccessed = index;
+    },
+    openModal() {
+      this.updateIsOpen({
+        isOpen: true
+      })
+    },
+    closeModal() {
+      this.updateIsOpen({
+        isOpen: false
+      })
+    },
+      getPic(url) {
+      return require("@/assets/images/" + url + "");
+    },
+  },
 };
 </script>
 <style scoped>
@@ -284,6 +249,74 @@ font-family: "Urby", sans-serif;
   width: 10%;
   align-self: center
 }
+::v-deep .modal__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::v-deep .internal__wrapper {
+  padding: 30px;
+  background: #fff;
+  border-radius: .25rem;
+  width: 53vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+}
+
+.modal__image {
+  width: 38%;
+  height: auto;
+}
+
+.modal__image img {
+  width: 100%
+}
+
+.modal__details {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.modal__details .title {
+  font-family: "AmsiPro", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.modal__details .desc {
+  margin-top: 10px;
+  font-family: "AmsiPro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.modal__details .socialIcons {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  align-self: flex-start;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+}
+
+.modal__details .socialIcons img {
+  cursor: pointer;
+}
+.closeModalIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer
+}
+
 @media screen and (max-width: 768px) {
   #heroContainer {
     min-height: 50vh;

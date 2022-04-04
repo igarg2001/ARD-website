@@ -80,7 +80,7 @@ export default {
 
 <style>
 #fullPage {
-  width: 99.2vw;
+  width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -96,7 +96,7 @@ export default {
     #4f53ff 30.16%,
     #f95a78 103.24%
   );
-  opacity: 0.6;
+  opacity: 0.5;
   z-index: 500;
   position: absolute;
 }

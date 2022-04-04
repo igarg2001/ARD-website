@@ -19,7 +19,7 @@ export default {
 .opaquePageTitle {
   height: 358px;
   /* text-transform: uppercase; */
-  width: calc(100vw - 15px);
+  width: calc(100vw);
   font-family: "Urby", sans-serif;
   font-weight: 900;
   font-size: 128px;
