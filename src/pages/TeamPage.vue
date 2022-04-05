@@ -27,7 +27,7 @@
     campuses too. The team led by Prof. Arya Kumar, Dean of Alumni Relations is
     like a bridge- connecting the alumni to their alma mater.
   </div>
-  </template>
+</template>
         </PageSection>
         <div class="carouselContainer">
            <FourInAPageSlider :data="teamData" @clicked="updateIsOpen"/>
@@ -36,23 +36,22 @@
            <template #heading>Student's Alumni Relations Cell (SARC)</template>
             <template #content>
             <div id="contentText">
-              Distinguished Alumni Awards 2020 were presented by BITS Pilani, Goa Campus
-              for the year of 2020. The event was hosted by the honorable Chancellor - Mr.
-              Kumar Mangalam Birla and Vice Chancellor - Prof. Souvik Bhattacharyya. The
-              event was well received by various prominent personalities including the
-              list of Awardees.
+             The Student Alumni Relations Cell (SARC) at each campus works under the aegis of the Dean of
+Alumni Relations to strengthen the student-alumni connection.
+The teams work in coordination with three major stakeholders- students, the institute, and BITSAA.
+These teams represent student intentions at all stages of alumni engagement.
             </div>
 
           </template>
         </PageSection>
         <div id="buttonCont">
-<OrangeButton displayText="Pilani" type="filled" customBorder="#F16582" customColor="white" customBackground="#F16582" :customStyle="{fontSize: '22px'}"  />
-<OrangeButton displayText="Goa" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582" :customStyle="{fontSize: '22px'}"/>
-<OrangeButton displayText="Hyderabad" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582" :customStyle="{fontSize: '22px'}"/>
-<OrangeButton displayText="Dubai" type="outline" customBorder="#F16582" customColor="#F16582" customBackground="#F16582" :customStyle="{fontSize: '22px'}"/>
+<OrangeButton displayText="Pilani" :componentKey="0" :type="this.activeCampus===0 ? 'filled' : 'outline'" customBorder="#F16582" :customColor="this.activeCampus===0 ? 'white' : '#F16582'" customBackground="#F16582" :customStyle="{fontSize: '22px'}"   @clicked="updateCampus"/>
+<OrangeButton displayText="Goa" :componentKey="1" :type="this.activeCampus===1 ? 'filled' : 'outline'" customBorder="#F16582" :customColor="this.activeCampus===1 ? 'white' : '#F16582'" customBackground="#F16582" :customStyle="{fontSize: '22px'}" @clicked="updateCampus"/>
+<OrangeButton displayText="Hyderabad" :componentKey="2" :type="this.activeCampus===2 ? 'filled' : 'outline'" customBorder="#F16582" :customColor="this.activeCampus===2 ? 'white' : '#F16582'" customBackground="#F16582" :customStyle="{fontSize: '22px'}" @clicked="updateCampus"/>
+<OrangeButton displayText="Dubai" :componentKey="3" :type="this.activeCampus===3 ? 'filled' : 'outline'" customBorder="#F16582" :customColor="this.activeCampus===3 ? 'white' : '#F16582'" customBackground="#F16582" :customStyle="{fontSize: '22px'}" @clicked="updateCampus"/>
 </div>
-          <div class="carouselContainer">
-           <FourInAPageSlider :data="teamData" @clicked="updateIsOpen"/>
+          <div class="imageContainer">
+            <img :src="this.getPic(this.campusList[this.activeCampus].url)" alt="SARC" />
         </div>
     
  
@@ -65,20 +64,23 @@ import FourInAPageSlider from "../components/Reusable/FourInAPageSlider.vue";
 import OpaquePageTitle from "../components/Reusable/OpaquePageTitle.vue";
 import OrangeButton from "../components/Reusable/Buttons/OrangeButton.vue";
 import {ref} from "vue";
-import {teamData} from "@/data/teamData"
+import {teamData, campusList} from "@/data/teamData"
 export default {
 
   data: () => {
     return {
       teamData,
+      campusList,
     };
   },
   setup() {
     const isOpen = ref(false);
     const indexToBeAccessed = ref(0);
+    const activeCampus = ref(0);
     return {
       isOpen,
-      indexToBeAccessed
+      indexToBeAccessed,
+      activeCampus,
     }
   },
   methods: {
@@ -106,9 +108,13 @@ export default {
       getPic(url) {
       return require("@/assets/images/" + url + "");
     },
+    updateCampus(i) {
+      console.log("updateCampus()", i)
+      this.activeCampus = i.index;
+    }
   },
   updated() {
-    console.log(this.isOpen);
+    console.log(this.activeCampus);
   },
   name: "TeamPage",
   components: {
@@ -137,6 +143,21 @@ export default {
   align-items: center;
   margin-left: 2.5%;
   margin-top: -8%;
+}
+.imageContainer {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+  margin-top: -4%;
+  margin-bottom: 2%
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
 }
 #buttonCont {
   width: 55%;

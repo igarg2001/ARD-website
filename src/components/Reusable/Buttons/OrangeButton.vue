@@ -21,17 +21,20 @@
       ...customStyle,
     }"
     v-wave
-    @click="createRipple"
+    @click="emitter(this.componentKey)"
   >
     {{ displayText }}
+    
   </div>
 </template>
 
 <script>
 export default {
   name: "OrangeButton",
+  emits: ["clicked"],
   props: {
     displayText: String,
+    componentKey: Number,
     type: String,
     color: Boolean,
     fontColor: String,
@@ -43,9 +46,11 @@ export default {
     customStyle: Object,
   },
   methods: {
-    createRipple: (event) => {
-      console.log(event);
-    },
+    emitter(i) {
+      this.$emit("clicked", {
+        index: i
+      })
+    }
   },
 };
 </script>
