@@ -6,8 +6,8 @@
       <div id="heroImpactText">Our Strength Comes From You</div>
       <div id="heroSubText">Support us by joining our network</div>
       <div id="heroCTAButtons">
-        <OrangeButton displayText="View Merchandise" customColor="#4F53FF" />
-        <OrangeButton displayText="Join AlmaConnect" customColor="#F95A78" />
+        <OrangeButton displayText="View Merchandise" customColor="#4F53FF" @clicked="openUrl('https://bitspilani.campusmall.in/', true)"/>
+        <OrangeButton displayText="Join AlmaConnect" customColor="#F95A78" @clicked="openUrl('https://bitspilani.almaconnect.com/', true)"/>
       </div>
     </div>
   </div>
@@ -202,6 +202,10 @@ export default {
       });
       this.selectActive[i] = true;
     },
+    openUrl(url, inNewTab) {
+      const blan= inNewTab ? '_blank' : null;
+      window.open(url, blan);
+    }
   },
 };
 </script>
